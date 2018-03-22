@@ -19,7 +19,7 @@ class IdentityServiceTest extends PHPUnit_Framework_TestCase
         $searchCriteria = new SearchCriteria();
         $expected = 'OK';
 
-        $esbDao = $this->getMock('\EMRAdmin\Service\Identity\Dao\Esb');
+        $esbDao = $this->createMock('\EMRAdmin\Service\Identity\Dao\Esb');
         $esbDao->expects($this->once())
             ->method('searchIdentity')
             ->with($searchCriteria)

@@ -33,7 +33,7 @@ class NewFeatureValidatorFactoryTest extends PHPUnit_Framework_TestCase
         parent::setUp();
 
         $this->sut = new NewFeatureValidatorFactory();
-        $this->serviceLocator = $this->getMock(ServiceLocatorInterface::class);
+        $this->serviceLocator = $this->createMock(ServiceLocatorInterface::class);
     }
 
     /**

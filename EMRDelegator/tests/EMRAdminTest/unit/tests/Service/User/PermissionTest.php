@@ -185,13 +185,13 @@ class PermissionTest extends PHPUnit_Framework_TestCase
      * @return \PHPUnit_Framework_MockObject_MockObject
      */
     private function injectPermissionDependencies($permissionService){
-        $modulesDao = $this->getMock('EMRAdmin\Service\Facility\Module\Dao\Modules');
+        $modulesDao = $this->createMock('EMRAdmin\Service\Facility\Module\Dao\Modules');
 
         /**
          * We create a User stub that will return an array with the
          * number 1 when asked for it's facilities
          */
-        $user = $this->getMock('EMRAdmin\Service\User\Dto\User');
+        $user = $this->createMock('EMRAdmin\Service\User\Dto\User');
         $user->expects($this->any())
             ->method('getFacilities')
             ->will($this->returnValue(array(1)));
@@ -209,7 +209,7 @@ class PermissionTest extends PHPUnit_Framework_TestCase
         $moduleDto->setFacilityId(1);
         $moduleDto->setModuleId(18);
 
-        $facilityHasModuleService = $this->getMock('EMRAdmin\Service\Facility\FacilityHasModules\FacilityHasModules');
+        $facilityHasModuleService = $this->createMock('EMRAdmin\Service\Facility\FacilityHasModules\FacilityHasModules');
         $facilityHasModuleService->expects($this->once())
             ->method('getFacilityHasModulesByFacilityId')
             ->with($this->equalTo(1))
@@ -228,7 +228,7 @@ class PermissionTest extends PHPUnit_Framework_TestCase
         $moduleDto->setFacilityId(1);
         $moduleDto->setModuleId(8);
 
-        $facilityHasModuleService = $this->getMock('EMRAdmin\Service\Facility\FacilityHasModules\FacilityHasModules');
+        $facilityHasModuleService = $this->createMock('EMRAdmin\Service\Facility\FacilityHasModules\FacilityHasModules');
         $facilityHasModuleService->expects($this->once())
             ->method('getFacilityHasModulesByFacilityId')
             ->with($this->equalTo(1))

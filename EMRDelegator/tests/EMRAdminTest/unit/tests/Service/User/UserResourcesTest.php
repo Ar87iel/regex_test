@@ -24,8 +24,8 @@ class UserResourcesTest extends PHPUnit_Framework_TestCase
     
     public function setUp()
     {
-        $this->serviceLocator = $this->getMock('Zend\ServiceManager\ServiceLocatorInterface');
-        $this->dao = $this->getMock('EMRAdmin\Service\User\Dao\UserResources');
+        $this->serviceLocator = $this->createMock('Zend\ServiceManager\ServiceLocatorInterface');
+        $this->dao = $this->createMock('EMRAdmin\Service\User\Dao\UserResources');
     }
     
     /**

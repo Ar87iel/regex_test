@@ -105,7 +105,7 @@ class SuccessToSaveFacilityResponseTest extends PHPUnit_Framework_TestCase
     public function testSetBillingAddressInformation()
     {
         /** @var ServiceLocatorInterface|PHPUnit_Framework_MockObject_MockObject $serviceLocator */
-        $serviceLocator = $this->getMock('Zend\ServiceManager\ServiceLocatorInterface');
+        $serviceLocator = $this->createMock('Zend\ServiceManager\ServiceLocatorInterface');
         $serviceLocator->expects($this->once())->method('get')
             ->with($this->equalTo('EMRAdmin\Service\Facility\Dto\SaveFacilityResponse'))
             ->will($this->returnValue(new SaveFacilityResponse));

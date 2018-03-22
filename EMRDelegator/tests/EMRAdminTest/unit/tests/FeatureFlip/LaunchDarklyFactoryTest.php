@@ -51,7 +51,7 @@ class LaunchDarklyFactoryTest extends PHPUnit_Framework_TestCase
         ]);
         $this->serviceLocator->setService(
             Application::class,
-            $this->getMock(SessionInterface::class)
+            $this->createMock(SessionInterface::class)
         );
 
         $service = (new LaunchDarklyFactory())->createService($this->serviceLocator);

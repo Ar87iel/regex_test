@@ -29,9 +29,9 @@ class SaveFacilityRequestToArrayTest extends PHPUnit_Framework_TestCase
     {
         $this->request = new SaveFacilityRequest;
 
-        $this->address = $this->getMock('EMRCore\Contact\Address\Dto\Address');
-        $this->telephone = $this->getMock('EMRCore\Contact\Telephone\Dto\Telephone');
-        $this->fax = $this->getMock('EMRCore\Contact\Fax\Dto\Fax');
+        $this->address = $this->createMock('EMRCore\Contact\Address\Dto\Address');
+        $this->telephone = $this->createMock('EMRCore\Contact\Telephone\Dto\Telephone');
+        $this->fax = $this->createMock('EMRCore\Contact\Fax\Dto\Fax');
     }
 
     /**

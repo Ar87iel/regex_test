@@ -21,8 +21,8 @@ class ModuleRequiredBillingFeedsProviderTest extends \PHPUnit_Framework_TestCase
     {
         parent::setUp();
 
-        $this->moduleService = $this->getMock('\EMRAdmin\Service\Facility\Module\ModulesInterface');
-        $this->billingFeedService = $this->getMock('\EMRAdmin\Service\BillingFeed\BillingFeedInterface');
+        $this->moduleService = $this->createMock('\EMRAdmin\Service\Facility\Module\ModulesInterface');
+        $this->billingFeedService = $this->createMock('\EMRAdmin\Service\BillingFeed\BillingFeedInterface');
         
         $this->sut = new ModuleRequiredBillingFeedsProvider(
             $this->moduleService,

@@ -33,12 +33,12 @@ class EsbDaoTest extends PHPUnit_Framework_TestCase
         $identities = array(1,2);
         $payload = (object)array('identities'=>$identities);
 
-        $esbResult = $this->getMock('EMRCore\Zend\module\Service\src\Response\Dto\Success');
+        $esbResult = $this->createMock('EMRCore\Zend\module\Service\src\Response\Dto\Success');
         $esbResult->expects($this->once())
             ->method('getPayload')
             ->will($this->returnValue($payload));
 
-        $route = $this->getMock('EMRCore\Config\Service\PrivateService\Esb\Dto\Route');
+        $route = $this->createMock('EMRCore\Config\Service\PrivateService\Esb\Dto\Route');
         $route->expects($this->once())
             ->method('getUri')
             ->will($this->returnValue($uri));
@@ -46,7 +46,7 @@ class EsbDaoTest extends PHPUnit_Framework_TestCase
             ->method('getMethod')
             ->will($this->returnValue($method));
 
-        $marshaller = $this->getMock('EMRCore\Service\Identity\Marshaller\SearchCriteriaToArray');
+        $marshaller = $this->createMock('EMRCore\Service\Identity\Marshaller\SearchCriteriaToArray');
         $marshaller->expects($this->once())
             ->method('marshall')
             ->with($searchCriteria)

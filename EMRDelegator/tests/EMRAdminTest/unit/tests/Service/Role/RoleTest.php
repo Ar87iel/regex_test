@@ -102,16 +102,16 @@ class RoleTest extends PHPUnit_Framework_TestCase
         $daoMock = $this->getMock('EMRAdmin\Service\Role\Dao\Role', array('saveRole'));
         $daoMock->expects($this->once())->method('saveRole')->with($this->equalTo($role))->will($this->returnValue($role));
 
-        $changeEvent = $this->getMock('EMRCore\Service\Entity\ChangeEvent');
+        $changeEvent = $this->createMock('EMRCore\Service\Entity\ChangeEvent');
         $changeEvent->expects($this->once())->method('sendForEntityFromAdmin');
 
         $userRoleModelTest = new UserRoleModel();
         $userRoleModelTest->setUserId(1);
 
-        $roleServiceMock = $this->getMock('EMRAdmin\Service\User\UserRole');
+        $roleServiceMock = $this->createMock('EMRAdmin\Service\User\UserRole');
         $roleServiceMock->expects($this->once())->method('getUserRoleByRole')->will($this->returnValue(array($userRoleModelTest)));
 
-        $serviceLocator = $this->getMock('Zend\ServiceManager\ServiceLocatorInterface');
+        $serviceLocator = $this->createMock('Zend\ServiceManager\ServiceLocatorInterface');
         $serviceLocator->expects($this->any())->method('get')->will($this->returnCallback(function ($name)
         use ($changeEvent, $roleServiceMock)
         {
@@ -262,10 +262,10 @@ class RoleTest extends PHPUnit_Framework_TestCase
         $daoMock->expects($this->once())->method('loadRole')->with($this->equalTo($id))->will($this->returnValue($role));
         $daoMock->expects($this->once())->method('delete')->with($this->equalTo($role))->will($this->returnValue($role));
 
-        $userRoleService = $this->getMock('EMRAdmin\Service\User\UserRole');
+        $userRoleService = $this->createMock('EMRAdmin\Service\User\UserRole');
         $userRoleService->expects($this->once())->method('getUserRoleByRole')->with($this->equalTo($role))->will($this->returnValue($userRoles));
 
-        $serviceLocator = $this->getMock('Zend\ServiceManager\ServiceLocatorInterface');
+        $serviceLocator = $this->createMock('Zend\ServiceManager\ServiceLocatorInterface');
         $serviceLocator->expects($this->any())->method('get')->will($this->returnCallback(function ($name) use ($userRoleService)
         {
 

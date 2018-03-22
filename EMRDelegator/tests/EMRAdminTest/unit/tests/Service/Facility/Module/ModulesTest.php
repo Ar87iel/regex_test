@@ -87,7 +87,7 @@ class ModulesTest2 extends PHPUnit_Framework_TestCase {
     {
         $expected = array();
 
-        $dao = $this->getMock('EMRAdmin\Service\Facility\Module\Dao\Modules');
+        $dao = $this->createMock('EMRAdmin\Service\Facility\Module\Dao\Modules');
         $dao->expects($this->once())
             ->method('getList')
             ->will($this->returnValue($expected));

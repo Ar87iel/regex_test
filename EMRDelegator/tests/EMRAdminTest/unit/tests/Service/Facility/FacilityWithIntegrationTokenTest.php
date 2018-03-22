@@ -80,8 +80,8 @@ class FacilityWithIntegrationTokenTest extends \PHPUnit_Framework_TestCase
     protected function setUp()
     {
         parent::setUp();
-        $this->esb = $this->getMock('EMRAdmin\Service\Facility\Dao\Esb');
-        $this->facilityExtIdService = $this->getMock('EMRAdmin\Service\ExternalId\FacilityIntegrationTokenInterface');
+        $this->esb = $this->createMock('EMRAdmin\Service\Facility\Dao\Esb');
+        $this->facilityExtIdService = $this->createMock('EMRAdmin\Service\ExternalId\FacilityIntegrationTokenInterface');
         $this->sut = new FacilityWithIntegrationToken($this->facilityExtIdService, $this->esb);
     }
 

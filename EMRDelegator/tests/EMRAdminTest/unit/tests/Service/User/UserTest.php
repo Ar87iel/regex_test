@@ -49,10 +49,10 @@ class UserTest extends PHPUnit_Framework_TestCase
         $this->userService = new UserService();
         $this->userRequest = new UserDto();
         $this->userResponse = new UserDto();
-        $this->serviceLocator = $this->getMock('Zend\ServiceManager\ServiceLocatorInterface');
+        $this->serviceLocator = $this->createMock('Zend\ServiceManager\ServiceLocatorInterface');
         $this->prototypeFactory = $this->getMock('EMRCore\PrototypeFactory', array(), array(), '', false);
-        $this->assetDao = $this->getMock('EMRAdmin\Service\User\Dao\Asset');
-        $this->esbDao = $this->getMock('EMRAdmin\Service\User\Dao\Esb');
+        $this->assetDao = $this->createMock('EMRAdmin\Service\User\Dao\Asset');
+        $this->esbDao = $this->createMock('EMRAdmin\Service\User\Dao\Esb');
     }
     
     public function testSaveNormalUserWithAssets()

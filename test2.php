@@ -1,52 +1,52 @@
 <?php
 
+//    files in directory
+    $files = array();
 //    only methods type 1
-    $type1 = "";
+    $type1 = "/getMock\(\'(([^,]*,){1}[^,]*);/";
 //    methods empty others type 2
     $type2 = "";
 //    methods not empty other type 3
     $type3 = "";
 
 
-	$rii = new RecursiveIteratorIterator(new RecursiveDirectoryIterator('./EMRDelegator/tests/EMRDelegatorTest/unit/tests/Service'));
-	$regexStep1 = "/getMock(?=\(\'(.*\,.*)\'\)\))/";
-	$regexStep2 = "/(?<=getMockBuilder\(\'[a-zA-Z\\]+\')(.*)(?=\)\;)/";
-	$files = array(); 
-
-	foreach ($rii as $file) {
-
-	    if ($file->isDir()){
-	        continue;
-	    }
-	    $files[] = $file->getPathname();
-	}
-
-	foreach ($files as $dir) {
-		var_dump($dir);
-		if (file_exists ($dir) ) {
-
-			$str = file_get_contents($dir);
-			
-			$str = preg_replace($regexStep1, 'getMockBuilder', $str);
-
-			file_put_contents($dir, $str);
-		}
-	}
+//$regexStep1 = "/getMock\((\'[\w\\]+\'),([\w\s\(\)\']+)/";
+//$regexStep2 = "/(?<=getMockBuilder\(\'[a-zA-Z\\]+\')(.*)(?=\)\;)/";
 
 
-	foreach ($files as $dir) {
-		var_dump($dir);
-		if (file_exists ($dir) ) {
+    $files = getListFiles();
+    sendToCorrectType($files,$type1);
 
-			$str2 = file_get_contents($dir);
+    function sendToCorrectType($files,$type1) {
+        foreach ($files as $dir) {
+            var_dump($dir);
+            if (file_exists ($dir) ) {
+                $str = file_get_contents($dir);
+                $str = preg_replace_callback($type1,evaluateType1, $str);
+                file_put_contents($dir, $str);
+            }
+        }
+    }
 
-			$str2 = preg_replace($regexStep2, 'getMockBuilder', $str2);
+    function evaluateType1($Match) {
+        var_dump("damierrrrrrrrrr");
+        var_dump($Match);
+        return "+++++++";
+    }
 
-			file_put_contents($dir, $str2);
-		}
-	}
+    function getListFiles() {
+    //    Directory to find "getmock"
+        $rii_ = new RecursiveIteratorIterator(new RecursiveDirectoryIterator('./EMRDelegator/tests/EMRAdminTest/unit/tests'));
+    //    files in directory
+        $files_ = array();
+        foreach ($rii_ as $file) {
 
+            if ($file->isDir()){
+                continue;
+            }
+            $files_[] = $file->getPathname();
+        }
+        return $files_;
+    }
 
-	// preg_match(pattern, subject)
-
-?>
+//getMock\(\'([a-zA-Z\\]+)\',([a-zZA-Z\s\(\)\']+)\;

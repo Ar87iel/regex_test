@@ -27,10 +27,10 @@ class GhostAdvancedFactoryTest extends TestCase
     {
         $this->featureFlipMock = $this->getMockBuilder(FeatureFlipInterface::class)
                                       ->disableOriginalConstructor()
-                                      ->getMock();
+                                      ->createMock();
         $this->GhostAdvancedMock = $this->getMockBuilder(GhostAdvanced::class)
                                       ->disableOriginalConstructor()
-                                      ->getMock();
+                                      ->createMock();
         $this->serviceLocator        = $serviceLocator = new ServiceManager();
         $serviceLocator->setService(GhostAdvancedFactory::WPT_FEATURE_FLIP, $this->featureFlipMock);
         $serviceLocator->setService(GhostAdvanced::class, $this->GhostAdvancedMock);

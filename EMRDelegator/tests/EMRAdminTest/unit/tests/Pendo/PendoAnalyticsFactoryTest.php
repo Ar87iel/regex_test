@@ -33,7 +33,7 @@ class PendoAnalyticsFactoryTest extends PHPUnit_Framework_TestCase
         $userId = mt_rand(500,700);
 
         /** @var FeatureFlipInterface | PHPUnit_Framework_MockObject_MockObject  $featureFlip  */
-        $featureFlip = $this->getMock('\Wpt\FeatureFlip\FeatureFlipInterface');
+        $featureFlip = $this->createMock('\Wpt\FeatureFlip\FeatureFlipInterface');
         $featureFlip->expects(self::once())->method('enabled')
                     ->with('pendo-snippet')
                     ->will(self::returnValue(true));
@@ -62,7 +62,7 @@ class PendoAnalyticsFactoryTest extends PHPUnit_Framework_TestCase
         $userId = mt_rand(500,700);
 
         /** @var FeatureFlipInterface | PHPUnit_Framework_MockObject_MockObject  $featureFlip  */
-        $featureFlip = $this->getMock('\Wpt\FeatureFlip\FeatureFlipInterface');
+        $featureFlip = $this->createMock('\Wpt\FeatureFlip\FeatureFlipInterface');
         $featureFlip->expects($this->any())->method('enabled')->will(self::returnValueMap([
             ['pendo-snippet', true],
             ['pendo-agent-2', false],
@@ -94,7 +94,7 @@ class PendoAnalyticsFactoryTest extends PHPUnit_Framework_TestCase
     public function testCreateServiceWithFeatureFlipOff()
     {
         /** @var FeatureFlipInterface | PHPUnit_Framework_MockObject_MockObject  $featureFlip  */
-        $featureFlip = $this->getMock('\Wpt\FeatureFlip\FeatureFlipInterface');
+        $featureFlip = $this->createMock('\Wpt\FeatureFlip\FeatureFlipInterface');
         $featureFlip->expects(self::once())->method('enabled')
                     ->with('pendo-snippet')
                     ->will(self::returnValue(false));
@@ -112,7 +112,7 @@ class PendoAnalyticsFactoryTest extends PHPUnit_Framework_TestCase
     public function testCreateServiceWithFeatureFlipOnAndBadConfigAndSessionMissingThrowsException()
     {
         /** @var FeatureFlipInterface | PHPUnit_Framework_MockObject_MockObject  $featureFlip  */
-        $featureFlip = $this->getMock('\Wpt\FeatureFlip\FeatureFlipInterface');
+        $featureFlip = $this->createMock('\Wpt\FeatureFlip\FeatureFlipInterface');
         $featureFlip->expects(self::once())->method('enabled')
                     ->with('pendo-snippet')
                     ->will(self::returnValue(true));
@@ -129,7 +129,7 @@ class PendoAnalyticsFactoryTest extends PHPUnit_Framework_TestCase
     public function testCreateServiceWithFeatureFlipOnAndSessionMissing()
     {
         /** @var FeatureFlipInterface | PHPUnit_Framework_MockObject_MockObject  $featureFlip  */
-        $featureFlip = $this->getMock('\Wpt\FeatureFlip\FeatureFlipInterface');
+        $featureFlip = $this->createMock('\Wpt\FeatureFlip\FeatureFlipInterface');
         $featureFlip->expects($this->any())->method('enabled')->will(self::returnValueMap([
             ['pendo-snippet', true],
             ['pendo-agent-2', false],
@@ -151,7 +151,7 @@ class PendoAnalyticsFactoryTest extends PHPUnit_Framework_TestCase
     public function testCreateServiceWithFeatureFlipOnAndAgentV2Disabled()
     {
         /** @var FeatureFlipInterface | PHPUnit_Framework_MockObject_MockObject  $featureFlip  */
-        $featureFlip = $this->getMock('\Wpt\FeatureFlip\FeatureFlipInterface');
+        $featureFlip = $this->createMock('\Wpt\FeatureFlip\FeatureFlipInterface');
         $featureFlip->expects($this->any())->method('enabled')->will(self::returnValueMap([
             ['pendo-snippet', true],
             ['pendo-agent-2', false],
@@ -173,7 +173,7 @@ class PendoAnalyticsFactoryTest extends PHPUnit_Framework_TestCase
     public function testCreateServiceWithFeatureFlipOnAgentV2Enabled()
     {
         /** @var FeatureFlipInterface | PHPUnit_Framework_MockObject_MockObject  $featureFlip  */
-        $featureFlip = $this->getMock('\Wpt\FeatureFlip\FeatureFlipInterface');
+        $featureFlip = $this->createMock('\Wpt\FeatureFlip\FeatureFlipInterface');
         $featureFlip->expects($this->any())->method('enabled')->will(self::returnValueMap([
             ['pendo-snippet', true],
             ['pendo-agent-2', true],

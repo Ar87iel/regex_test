@@ -60,7 +60,7 @@ class PermissionFactoryTest extends PHPUnit_Framework_TestCase
         $serviceLocator = new ServiceManager();
         $serviceLocator->setService('config', $blackList);
 
-        $featureFlip = $this->getMock(FeatureFlipInterface::class);
+        $featureFlip = $this->createMock(FeatureFlipInterface::class);
         $featureFlip->expects(static::any())
             ->method('enabled')
             ->will(static::returnValue($featureFlipActivated));
@@ -72,14 +72,14 @@ class PermissionFactoryTest extends PHPUnit_Framework_TestCase
 
         $permissionSdk = $this->getMockBuilder(PermissionSdk::class)
             ->disableOriginalConstructor()
-            ->getMock();
+            ->createMock();
         $permissionSdk->expects(static::any())
             ->method("getPermissionCatalog")
             ->will(static::returnValue($entity));
 
         $sdk = $this->getMockBuilder(Sdk::class)
             ->disableOriginalConstructor()
-            ->getMock();
+            ->createMock();
         $sdk->expects(static::any())
             ->method("getPermissionService")
             ->will(static::returnValue($permissionSdk));

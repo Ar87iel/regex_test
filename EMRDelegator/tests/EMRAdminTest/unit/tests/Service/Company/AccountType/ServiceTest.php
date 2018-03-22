@@ -37,7 +37,7 @@ class ServiceTest extends PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->sut = new CompanyAccountTypeService();
-        $this->dao = $this->getMock('EMRAdmin\Service\Company\AccountType\Dao\Doctrine');
+        $this->dao = $this->createMock('EMRAdmin\Service\Company\AccountType\Dao\Doctrine');
         $this->sut->setAccountTypeDao($this->dao);
     }
 

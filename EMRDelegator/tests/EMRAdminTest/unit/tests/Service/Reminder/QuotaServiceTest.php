@@ -20,7 +20,7 @@ class QuotaServiceTest extends PHPUnit_Framework_TestCase
      */
     private function getDaoMock($methods = array())
     {
-        return $this->getMock('EMRAdmin\Service\Reminder\Dao\Esb');
+        return $this->createMock('EMRAdmin\Service\Reminder\Dao\Esb');
     }
 
     public function testGetQuotas()

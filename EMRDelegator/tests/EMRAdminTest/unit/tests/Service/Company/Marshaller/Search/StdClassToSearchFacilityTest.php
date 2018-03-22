@@ -82,14 +82,14 @@ class StdClassToSearchFacilityTest extends PHPUnit_Framework_TestCase
                     throw new InvalidArgumentException("Mocked PrototypeFactory cannot provide [$name].");
                 }));
 
-        $licenseMarshaller = $this->getMock('EMRAdmin\Service\Company\Marshaller\Search\StdClassToLicenseCollection');
+        $licenseMarshaller = $this->createMock('EMRAdmin\Service\Company\Marshaller\Search\StdClassToLicenseCollection');
         $licenseMarshaller->expects($this->once())->method('marshall')
                 ->withAnyParameters()->will($this->returnValue(new LicenseCollection));
 
-		$facility = $this->getMock('EMRAdmin\Service\Facility\Facility');
+		$facility = $this->createMock('EMRAdmin\Service\Facility\Facility');
 
         /** @var ServiceLocatorInterface|PHPUnit_Framework_MockObject_MockObject $serviceLocator */
-        $serviceLocator = $this->getMock('Zend\ServiceManager\ServiceLocatorInterface');
+        $serviceLocator = $this->createMock('Zend\ServiceManager\ServiceLocatorInterface');
         $this->marshaller->setServiceLocator($serviceLocator);
 
         $serviceLocator->expects($this->any())

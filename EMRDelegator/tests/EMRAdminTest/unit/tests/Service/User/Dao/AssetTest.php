@@ -25,13 +25,13 @@ class AssetTest extends PHPUnit_Framework_TestCase
     
     function setUp()
     {
-        $this->serviceLocator = $this->getMock('Zend\ServiceManager\ServiceLocatorInterface');
+        $this->serviceLocator = $this->createMock('Zend\ServiceManager\ServiceLocatorInterface');
     }
     
     public function testStoreTemporaryLogo()
     {
-        $fileService = $this->getMock("EMRCore\File\File");
-        $assetService = $this->getMock("EMRCore\Service\Assets\User");
+        $fileService = $this->createMock("EMRCore\File\File");
+        $assetService = $this->createMock("EMRCore\Service\Assets\User");
         
         $assetService
             ->expects($this->once())
@@ -85,8 +85,8 @@ class AssetTest extends PHPUnit_Framework_TestCase
     
     public function testStoreTemporarySignature()
     {
-        $fileService = $this->getMock("EMRCore\File\File");
-        $assetService = $this->getMock("EMRCore\Service\Assets\User");
+        $fileService = $this->createMock("EMRCore\File\File");
+        $assetService = $this->createMock("EMRCore\Service\Assets\User");
         
         $assetService
             ->expects($this->once())
@@ -140,8 +140,8 @@ class AssetTest extends PHPUnit_Framework_TestCase
     
     public function testStorePermanentLogo()
     {
-        $fileService = $this->getMock("EMRCore\File\File");
-        $assetService = $this->getMock("EMRCore\Service\Assets\User");
+        $fileService = $this->createMock("EMRCore\File\File");
+        $assetService = $this->createMock("EMRCore\Service\Assets\User");
         
         $this->serviceLocator->expects($this->any())
             ->method('get')
@@ -195,8 +195,8 @@ class AssetTest extends PHPUnit_Framework_TestCase
     
     public function testStorePermanentSignature()
     {
-        $fileService = $this->getMock("EMRCore\File\File");
-        $assetService = $this->getMock("EMRCore\Service\Assets\User");
+        $fileService = $this->createMock("EMRCore\File\File");
+        $assetService = $this->createMock("EMRCore\Service\Assets\User");
         
         $this->serviceLocator->expects($this->any())
             ->method('get')
@@ -250,8 +250,8 @@ class AssetTest extends PHPUnit_Framework_TestCase
     
     public function testDeletePermanentLogoFile()
     {
-        $fileService = $this->getMock("EMRCore\File\File");
-        $assetService = $this->getMock("EMRCore\Service\Assets\User");
+        $fileService = $this->createMock("EMRCore\File\File");
+        $assetService = $this->createMock("EMRCore\Service\Assets\User");
         
         $this->serviceLocator->expects($this->any())
             ->method('get')
@@ -298,8 +298,8 @@ class AssetTest extends PHPUnit_Framework_TestCase
     
       public function testDeletePermanentSignatureFile()
     {
-        $fileService = $this->getMock("EMRCore\File\File");
-        $assetService = $this->getMock("EMRCore\Service\Assets\User");
+        $fileService = $this->createMock("EMRCore\File\File");
+        $assetService = $this->createMock("EMRCore\Service\Assets\User");
         
         $this->serviceLocator->expects($this->any())
             ->method('get')

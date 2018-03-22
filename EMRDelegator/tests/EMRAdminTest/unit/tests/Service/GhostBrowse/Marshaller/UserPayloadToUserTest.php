@@ -92,7 +92,7 @@ class UserPayloadToUserTest extends PHPUnit_Framework_TestCase
          * setup service locator mock
          */
         /** @var ServiceLocatorInterface|PHPUnit_Framework_MockObject_MockObject $serviceLocator */
-        $serviceLocator = $this->getMock('Zend\ServiceManager\ServiceLocatorInterface');
+        $serviceLocator = $this->createMock('Zend\ServiceManager\ServiceLocatorInterface');
 
         $serviceLocator->expects($this->any())->method('get')
                 ->will($this->returnCallback(function($name) 

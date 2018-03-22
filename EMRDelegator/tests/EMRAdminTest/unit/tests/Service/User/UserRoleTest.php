@@ -34,9 +34,9 @@ class UserRoleTest extends PHPUnit_Framework_TestCase
 
     function setUp()
     {
-        $this->serviceLocator = $this->getMock('Zend\ServiceManager\ServiceLocatorInterface');
+        $this->serviceLocator = $this->createMock('Zend\ServiceManager\ServiceLocatorInterface');
         $this->prototypeFactory = $this->getMock('EMRCore\PrototypeFactory', array(), array(), '', false);
-        $this->DaoUserRole = $this->getMock("EMRAdmin\Service\User\Dao\UserRole");
+        $this->DaoUserRole = $this->createMock("EMRAdmin\Service\User\Dao\UserRole");
     }
 
     /**
@@ -66,10 +66,10 @@ class UserRoleTest extends PHPUnit_Framework_TestCase
 
         $this->DaoUserRole->expects($this->any())->method("delete")->will($this->returnValue(true));
 
-        $ServiceRole = $this->getMock("EMRAdmin\Service\Role\Role");
+        $ServiceRole = $this->createMock("EMRAdmin\Service\Role\Role");
         $ServiceRole->expects($this->once())->method("get")->will($this->returnValue($roleModel));
         
-        $eventService = $this->getMock('EMRCore\Service\Entity\ChangeEvent');
+        $eventService = $this->createMock('EMRCore\Service\Entity\ChangeEvent');
         $eventService->expects($this->once())->method('sendForEntityFromAdmin')->will($this->returnValue(true));
 
         $this->serviceLocator->expects($this->any())->method('get')

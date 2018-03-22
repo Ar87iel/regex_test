@@ -55,7 +55,7 @@ class FeatureFlipChainFactoryTest extends PHPUnit_Framework_TestCase
         ]);
         $this->serviceLocator->setService(
             'Wpt\LaunchDarkly\UserProvider',
-            $this->getMock(UserProviderInterface::class)
+            $this->createMock(UserProviderInterface::class)
         );
 
         $featureFlip = (new FeatureFlipChainFactory())->createService($this->serviceLocator);
@@ -85,7 +85,7 @@ class FeatureFlipChainFactoryTest extends PHPUnit_Framework_TestCase
         ]);
         $this->serviceLocator->setService(
             Application::class,
-            $this->getMock(SessionInterface::class)
+            $this->createMock(SessionInterface::class)
         );
 
         DummyFeatureRequester::$requests = [];

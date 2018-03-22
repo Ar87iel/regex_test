@@ -54,7 +54,7 @@ class SuccessToSaveCompanyResponseTest extends PHPUnit_Framework_TestCase
         $marshaller->expects($this->once())->method('setTelephoneInformation')->withAnyParameters();
         $marshaller->expects($this->once())->method('setEmailInformation')->withAnyParameters();
 
-        $serviceLocator = $this->getMock('Zend\ServiceManager\ServiceLocatorInterface');
+        $serviceLocator = $this->createMock('Zend\ServiceManager\ServiceLocatorInterface');
 
         $serviceLocator->expects($this->once())->method('get')
             ->with($this->equalTo('EMRAdmin\Service\Company\Dto\SaveCompanyResponse'))

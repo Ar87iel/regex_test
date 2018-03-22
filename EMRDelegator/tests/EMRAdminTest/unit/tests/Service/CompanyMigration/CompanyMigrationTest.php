@@ -23,7 +23,7 @@ class CompanyMigrationTest extends \PHPUnit_Framework_TestCase {
     protected function setUp()
     {
 
-        $this->daoMock = $this->getMock('EMRAdmin\Service\CompanyMigration\Dao\CompanyMigration');
+        $this->daoMock = $this->createMock('EMRAdmin\Service\CompanyMigration\Dao\CompanyMigration');
 
         $this->service = new Service();
         $this->service->setCompanyMigrationDao($this->daoMock);

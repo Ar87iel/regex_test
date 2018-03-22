@@ -44,7 +44,7 @@ class SuccessToDeleteFacilityLogoResponseTest extends PHPUnit_Framework_TestCase
         /*
          * setup the service locator mock
          */
-//        $serviceLocator = $this->getMock('Zend\ServiceManager\ServiceLocatorInterface');
+//        $serviceLocator = $this->createMock('Zend\ServiceManager\ServiceLocatorInterface');
 //        $serviceLocator->expects($this->once())->method('get')
 //            ->with($this->equalTo('EMRAdmin\Service\FacilityLogo\Dto\DeleteFacilityLogoResponse'))
 //            ->will($this->returnValue(new DeleteFacilityLogoResponse));

@@ -49,14 +49,14 @@ class TypeTest extends PHPUnit_Framework_TestCase
                 throw new InvalidArgumentException("Mocked PrototypeFactory cannot provide [$name].");
             }));
 
-        $this->entityManager = $this->getMock('\Doctrine\Common\Persistence\ObjectManager');
-        $this->userTypeRepository = $this->getMock('\Doctrine\Common\Persistence\ObjectRepository');
+        $this->entityManager = $this->createMock('\Doctrine\Common\Persistence\ObjectManager');
+        $this->userTypeRepository = $this->createMock('\Doctrine\Common\Persistence\ObjectRepository');
         $this->entityManager->expects($this->any())->method('getRepository')
             ->will($this->returnValueMap(array(
                 array('EMRModel\User\UserType', $this->userTypeRepository),
             )));
 
-        $this->masterAdapter = $this->getMock('\EMRCore\DoctrineConnector\Adapter\Adapter');
+        $this->masterAdapter = $this->createMock('\EMRCore\DoctrineConnector\Adapter\Adapter');
         $this->masterAdapter->expects($this->any())->method('getEntityManager')
             ->will($this->returnValue($this->entityManager));
 
@@ -89,7 +89,7 @@ class TypeTest extends PHPUnit_Framework_TestCase
     {
         $prototypeFactory = $this->getMock('EMRCore\PrototypeFactory', array(), array(), '', false);
 
-        $collection = $this->getMock('EMRAdmin\Service\User\Dto\TypeCollection');
+        $collection = $this->createMock('EMRAdmin\Service\User\Dto\TypeCollection');
         $collection->expects($this->once())->method('push');
 
         $prototypeFactory->expects($this->any())
@@ -128,7 +128,7 @@ class TypeTest extends PHPUnit_Framework_TestCase
     {
         $prototypeFactory = $this->getMock('EMRCore\PrototypeFactory', array(), array(), '', false);
 
-        $collection = $this->getMock('EMRAdmin\Service\User\Dto\TypeCollection');
+        $collection = $this->createMock('EMRAdmin\Service\User\Dto\TypeCollection');
         $collection->expects($this->once())
             ->method('push');
 
@@ -168,7 +168,7 @@ class TypeTest extends PHPUnit_Framework_TestCase
     {
         $prototypeFactory = $this->getMock('EMRCore\PrototypeFactory', array(), array(), '', false);
 
-        $collection = $this->getMock('EMRAdmin\Service\User\Dto\TypeCollection');
+        $collection = $this->createMock('EMRAdmin\Service\User\Dto\TypeCollection');
         $collection->expects($this->exactly(2))->method('push');
 
         $prototypeFactory->expects($this->any())
@@ -207,7 +207,7 @@ class TypeTest extends PHPUnit_Framework_TestCase
     {
         $prototypeFactory = $this->getMock('EMRCore\PrototypeFactory', array(), array(), '', false);
 
-        $collection = $this->getMock('EMRAdmin\Service\User\Dto\TypeCollection');
+        $collection = $this->createMock('EMRAdmin\Service\User\Dto\TypeCollection');
         $collection->expects($this->once())
             ->method('push');
 
@@ -245,7 +245,7 @@ class TypeTest extends PHPUnit_Framework_TestCase
     {
         $prototypeFactory = $this->getMock('EMRCore\PrototypeFactory', array(), array(), '', false);
 
-        $collection = $this->getMock('EMRAdmin\Service\User\Dto\TypeCollection');
+        $collection = $this->createMock('EMRAdmin\Service\User\Dto\TypeCollection');
         $collection->expects($this->once())
             ->method('push');
 
@@ -285,7 +285,7 @@ class TypeTest extends PHPUnit_Framework_TestCase
     {
         $prototypeFactory = $this->getMock('EMRCore\PrototypeFactory', array(), array(), '', false);
 
-        $collection = $this->getMock('EMRAdmin\Service\User\Dto\TypeCollection');
+        $collection = $this->createMock('EMRAdmin\Service\User\Dto\TypeCollection');
         $collection->expects($this->once())
             ->method('push');
 

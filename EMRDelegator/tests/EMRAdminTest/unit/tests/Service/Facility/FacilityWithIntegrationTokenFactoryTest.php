@@ -23,7 +23,7 @@ class FacilityWithIntegrationTokenFactoryTest extends \PHPUnit_Framework_TestCas
     {
         $this->sm->setService(
             'EMRAdmin\Service\Facility\Dao\Esb',
-            $this->getMock('\EMRAdmin\Service\Facility\Dao\Esb')
+            $this->createMock('\EMRAdmin\Service\Facility\Dao\Esb')
         );
 
         self::assertInstanceOf('\EMRAdmin\Service\Facility\FacilityInterface', $this->sut->createService($this->sm));
@@ -33,12 +33,12 @@ class FacilityWithIntegrationTokenFactoryTest extends \PHPUnit_Framework_TestCas
     {
         $this->sm->setService(
             'EMRAdmin\Service\Facility\Dao\Esb',
-            $this->getMock('\EMRAdmin\Service\Facility\Dao\Esb')
+            $this->createMock('\EMRAdmin\Service\Facility\Dao\Esb')
         );
 
         $this->sm->setService(
             'EMRAdmin\Service\ExternalId\Facility',
-            $this->getMock('\EMRAdmin\Service\ExternalId\FacilityIntegrationTokenInterface')
+            $this->createMock('\EMRAdmin\Service\ExternalId\FacilityIntegrationTokenInterface')
         );
 
         self::assertInstanceOf('\EMRAdmin\Service\Facility\FacilityInterface', $this->sut->createService($this->sm));

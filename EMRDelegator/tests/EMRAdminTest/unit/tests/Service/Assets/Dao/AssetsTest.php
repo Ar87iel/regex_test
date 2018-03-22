@@ -33,7 +33,7 @@ class AssetsTest extends PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->serviceLocator = $this->getMock('Zend\ServiceManager\ServiceLocatorInterface');
+        $this->serviceLocator = $this->createMock('Zend\ServiceManager\ServiceLocatorInterface');
     }
 
     /**
@@ -105,7 +105,7 @@ class AssetsTest extends PHPUnit_Framework_TestCase
 
         $fakePath = "data/assets/company/0/0/1/facility/0/0/1/logo.jpg";
 
-        $userAssetService = $this->getMock("EMRCore\Service\Assets\User");
+        $userAssetService = $this->createMock("EMRCore\Service\Assets\User");
         $userAssetService->expects($this->once())
                 ->method("getSignatureFilename")
                 ->with($this->equalTo($userAsserRequest->getUserid()))
@@ -139,7 +139,7 @@ class AssetsTest extends PHPUnit_Framework_TestCase
 
         $fakePath = "data/assets/company/0/0/1/facility/0/0/1/logo.jpg";
 
-        $userAssetService = $this->getMock("EMRCore\Service\Assets\User");
+        $userAssetService = $this->createMock("EMRCore\Service\Assets\User");
         $userAssetService->expects($this->once())
                 ->method("getLogoFilename")
                 ->with($this->equalTo($userAsserRequest->getUserid()))

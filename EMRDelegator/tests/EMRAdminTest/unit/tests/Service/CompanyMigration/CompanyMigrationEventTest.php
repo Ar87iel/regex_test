@@ -53,19 +53,19 @@ class CompanyMigrationEventTest extends \PHPUnit_Framework_TestCase {
 
         $eventModel = new EventModel();
 
-        $migrationServiceMock = $this->getMock('EMRAdmin\Service\CompanyMigration\CompanyMigration');
+        $migrationServiceMock = $this->createMock('EMRAdmin\Service\CompanyMigration\CompanyMigration');
         $migrationServiceMock->expects($this->once())
             ->method('getCompanyMigrationByCompanyId')
             ->with($companyId)
             ->will($this->returnValue($migrationModel));
 
-        $serviceLocatorMock = $this->getMock('Zend\ServiceManager\ServiceLocatorInterface');
+        $serviceLocatorMock = $this->createMock('Zend\ServiceManager\ServiceLocatorInterface');
         $serviceLocatorMock->expects($this->once())
             ->method('get')
             ->with('EMRAdmin\Service\CompanyMigration\CompanyMigration')
             ->will($this->returnValue($migrationServiceMock));
 
-        $eventDaoMock = $this->getMock('EMRAdmin\Service\CompanyMigration\Dao\CompanyMigrationEvent');
+        $eventDaoMock = $this->createMock('EMRAdmin\Service\CompanyMigration\Dao\CompanyMigrationEvent');
         $eventDaoMock->expects($this->once())
             ->method('create')
             ->with($eventModel)
@@ -102,13 +102,13 @@ class CompanyMigrationEventTest extends \PHPUnit_Framework_TestCase {
         $migrationModel = null;
 
 
-        $migrationServiceMock = $this->getMock('EMRAdmin\Service\CompanyMigration\CompanyMigration');
+        $migrationServiceMock = $this->createMock('EMRAdmin\Service\CompanyMigration\CompanyMigration');
         $migrationServiceMock->expects($this->once())
             ->method('getCompanyMigrationByCompanyId')
             ->with($companyId)
             ->will($this->returnValue(null));
 
-        $serviceLocatorMock = $this->getMock('Zend\ServiceManager\ServiceLocatorInterface');
+        $serviceLocatorMock = $this->createMock('Zend\ServiceManager\ServiceLocatorInterface');
         $serviceLocatorMock->expects($this->once())
             ->method('get')
             ->with('EMRAdmin\Service\CompanyMigration\CompanyMigration')
@@ -137,19 +137,19 @@ class CompanyMigrationEventTest extends \PHPUnit_Framework_TestCase {
 
         $eventModel = new EventModel();
 
-        $migrationServiceMock = $this->getMock('EMRAdmin\Service\CompanyMigration\CompanyMigration');
+        $migrationServiceMock = $this->createMock('EMRAdmin\Service\CompanyMigration\CompanyMigration');
         $migrationServiceMock->expects($this->once())
             ->method('getCompanyMigrationByCompanyId')
             ->with($companyId)
             ->will($this->returnValue($migrationModel));
 
-        $serviceLocatorMock = $this->getMock('Zend\ServiceManager\ServiceLocatorInterface');
+        $serviceLocatorMock = $this->createMock('Zend\ServiceManager\ServiceLocatorInterface');
         $serviceLocatorMock->expects($this->once())
             ->method('get')
             ->with('EMRAdmin\Service\CompanyMigration\CompanyMigration')
             ->will($this->returnValue($migrationServiceMock));
 
-        $eventDaoMock = $this->getMock('EMRAdmin\Service\CompanyMigration\Dao\CompanyMigrationEvent');
+        $eventDaoMock = $this->createMock('EMRAdmin\Service\CompanyMigration\Dao\CompanyMigrationEvent');
 
         $eventServiceMock = $this->getMock('EMRAdmin\Service\CompanyMigration\CompanyMigrationEvent',
             array('getEventModel'));
@@ -178,13 +178,13 @@ class CompanyMigrationEventTest extends \PHPUnit_Framework_TestCase {
 
         $migrationModel = null;
 
-        $migrationServiceMock = $this->getMock('EMRAdmin\Service\CompanyMigration\CompanyMigration');
+        $migrationServiceMock = $this->createMock('EMRAdmin\Service\CompanyMigration\CompanyMigration');
         $migrationServiceMock->expects($this->once())
             ->method('getCompanyMigrationByCompanyId')
             ->with($companyId)
             ->will($this->returnValue($migrationModel));
 
-        $serviceLocatorMock = $this->getMock('Zend\ServiceManager\ServiceLocatorInterface');
+        $serviceLocatorMock = $this->createMock('Zend\ServiceManager\ServiceLocatorInterface');
         $serviceLocatorMock->expects($this->once())
             ->method('get')
             ->with('EMRAdmin\Service\CompanyMigration\CompanyMigration')

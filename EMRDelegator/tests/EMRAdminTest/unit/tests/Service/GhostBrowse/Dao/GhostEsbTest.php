@@ -71,7 +71,7 @@ class GhostEsbTest extends PHPUnit_Framework_TestCase
 
         $this->singletonTestCaseHelper->mockSingleton($this->mockEsbFactory, $esbFactoryClass);
 
-        $this->mockServiceLocator = $this->getMock('Zend\ServiceManager\ServiceLocatorInterface');
+        $this->mockServiceLocator = $this->createMock('Zend\ServiceManager\ServiceLocatorInterface');
         
         $this->mockPrototypeFactory = $this->getMock('EMRCore\PrototypeFactory', array(), array(), '', false );
 
@@ -100,7 +100,7 @@ class GhostEsbTest extends PHPUnit_Framework_TestCase
         $prototypeFactory = $this->getMock('EMRCore\PrototypeFactory', array(), array(), '', false);
 
         // Create a mock ServiceLocator and set the dependency.
-        $serviceLocator = $this->getMock('Zend\ServiceManager\ServiceLocatorInterface');
+        $serviceLocator = $this->createMock('Zend\ServiceManager\ServiceLocatorInterface');
         $dao->setServiceLocator($serviceLocator);
 
         // Create a fake route.
@@ -109,7 +109,7 @@ class GhostEsbTest extends PHPUnit_Framework_TestCase
         $route->setMethod('qwer');
 
         // Always use the fake route for our request.
-        $routes = $this->getMock('EMRCore\Config\Service\PrivateService\Esb\Routes');
+        $routes = $this->createMock('EMRCore\Config\Service\PrivateService\Esb\Routes');
 
         $routes->expects($this->once())
                 ->method('getRouteByName')
@@ -216,7 +216,7 @@ class GhostEsbTest extends PHPUnit_Framework_TestCase
         $response->setContent($content);
 
         // Return the mock response.
-        $client = $this->getMock('Zend\Http\Client');
+        $client = $this->createMock('Zend\Http\Client');
         $client->expects($this->once())->method('send')
                 ->will($this->returnValue($response));
 
@@ -328,14 +328,14 @@ class GhostEsbTest extends PHPUnit_Framework_TestCase
         $companies = new SearchCompanyLiteCollection();
 
         // Always use the fake route for our request.
-        $routes = $this->getMock('EMRCore\Config\Service\PrivateService\Esb\Routes');
+        $routes = $this->createMock('EMRCore\Config\Service\PrivateService\Esb\Routes');
 
         $routes->expects($this->once())
                 ->method('getRouteByName')
                 ->with($this->anything())
                 ->will($this->returnValue($route));
 
-        $marshaller = $this->getMock('EMRAdmin\Service\GhostBrowse\Marshaller\Search\SuccessToGhostBrowseSearchResponse');
+        $marshaller = $this->createMock('EMRAdmin\Service\GhostBrowse\Marshaller\Search\SuccessToGhostBrowseSearchResponse');
         $marshaller->expects($this->once())
                 ->method('marshall')
                 ->with($this->anything())
@@ -368,7 +368,7 @@ class GhostEsbTest extends PHPUnit_Framework_TestCase
         $response->setContent($content);
 
         // Return the mock response.
-        $client = $this->getMock('Zend\Http\Client');
+        $client = $this->createMock('Zend\Http\Client');
         $client->expects($this->once())->method('send')
                 ->will($this->returnValue($response));
 
@@ -431,14 +431,14 @@ class GhostEsbTest extends PHPUnit_Framework_TestCase
         $companies = new UsersByCompanyIdDto();
 
         // Always use the fake route for our request.
-        $routes = $this->getMock('EMRCore\Config\Service\PrivateService\Esb\Routes');
+        $routes = $this->createMock('EMRCore\Config\Service\PrivateService\Esb\Routes');
 
         $routes->expects($this->once())
                 ->method('getRouteByName')
                 ->with($this->anything())
                 ->will($this->returnValue($route));
 
-        $marshaller = $this->getMock('EMRAdmin\Service\GhostBrowse\Marshaller\Search\UsersByCompanyId');
+        $marshaller = $this->createMock('EMRAdmin\Service\GhostBrowse\Marshaller\Search\UsersByCompanyId');
         $marshaller->expects($this->once())
                 ->method('marshall')
                 ->with($this->anything())
@@ -473,7 +473,7 @@ class GhostEsbTest extends PHPUnit_Framework_TestCase
         $response->setContent($content);
 
         // Return the mock response.
-        $client = $this->getMock('Zend\Http\Client');
+        $client = $this->createMock('Zend\Http\Client');
         $client->expects($this->once())->method('send')
                 ->will($this->returnValue($response));
 

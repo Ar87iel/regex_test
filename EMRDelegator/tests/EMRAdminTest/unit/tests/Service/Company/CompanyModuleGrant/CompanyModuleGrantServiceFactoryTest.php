@@ -53,7 +53,7 @@ class CompanyModuleGrantServiceFactoryTest extends PHPUnit_Framework_TestCase
         $serviceLocator = $this->setServiceLocator();
 
         $serviceLocatorWithLogger = $this->setServiceLocator();
-        $serviceLocatorWithLogger->setService('SimpleLogger', $this->getMock(LoggerInterface::class));
+        $serviceLocatorWithLogger->setService('SimpleLogger', $this->createMock(LoggerInterface::class));
 
         return [
             'company-modules enabled, logger not found' => [true, $serviceLocator],
@@ -73,7 +73,7 @@ class CompanyModuleGrantServiceFactoryTest extends PHPUnit_Framework_TestCase
      */
     public function testCreateService($enabledValue, ServiceLocatorInterface $serviceLocator)
     {
-        $featureFlip = $this->getMock(FeatureFlipInterface::class);
+        $featureFlip = $this->createMock(FeatureFlipInterface::class);
         $featureFlip->expects(static::any())->method('enabled')->willReturn($enabledValue);
 
         $serviceLocator->setService('Wpt\FeatureFlip', $featureFlip);
@@ -94,11 +94,11 @@ class CompanyModuleGrantServiceFactoryTest extends PHPUnit_Framework_TestCase
         $serviceLocator = new ServiceManager();
         $serviceLocator->setAllowOverride(true);
 
-        $sdk = $this->getMockBuilder(Sdk::class)->disableOriginalConstructor()->getMock();
+        $sdk = $this->getMockBuilder(Sdk::class)->disableOriginalConstructor()->createMock();
 
-        $companyModuleService = $this->getMock(CompanyModulesServiceInterface::class);
+        $companyModuleService = $this->createMock(CompanyModulesServiceInterface::class);
 
-        $sdkCompanyModuleGrantService = $this->getMock(SdkCompanyModuleGrantServiceInterface::class);
+        $sdkCompanyModuleGrantService = $this->createMock(SdkCompanyModuleGrantServiceInterface::class);
 
         $sdk->expects(static::any())
             ->method('getCompanyModuleService')

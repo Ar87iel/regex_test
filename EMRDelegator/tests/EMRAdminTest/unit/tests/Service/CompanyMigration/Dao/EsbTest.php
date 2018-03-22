@@ -43,7 +43,7 @@ class EsbTest extends PHPUnit_Framework_TestCase
         ));
 
         /** @var ServiceLocatorInterface|PHPUnit_Framework_MockObject_MockObject $serviceLocator */
-        $serviceLocator = $this->getMock('Zend\ServiceManager\ServiceLocatorInterface');
+        $serviceLocator = $this->createMock('Zend\ServiceManager\ServiceLocatorInterface');
         // Stub service locator calls to return the mocks.
         $serviceLocator->expects($this->any())
             ->method('get')
@@ -51,7 +51,7 @@ class EsbTest extends PHPUnit_Framework_TestCase
             ->will($this->returnValue($parser));
 
         // Mock the client wrapper and ensure that execute is called. This is how the ESB request is sent.
-        $clientWrapper = $this->getMock('EMRCore\Zend\Http\ClientWrapper');
+        $clientWrapper = $this->createMock('EMRCore\Zend\Http\ClientWrapper');
         $clientWrapper->expects($this->once())
             ->method('setResponseParser')
             ->with($parser);

@@ -47,14 +47,14 @@ class LogoTest extends PHPUnit_Framework_TestCase
         $logger = $this->getMock('Logger', array(), array(), '', false);
         $this->logger = $logger;
 
-        $assetsService = $this->getMock('EMRCore\Service\Assets\Facility');
+        $assetsService = $this->createMock('EMRCore\Service\Assets\Facility');
         $this->assetsService = $assetsService;
 
-        $fileService = $this->getMock('EMRCore\File\File');
+        $fileService = $this->createMock('EMRCore\File\File');
         $this->fileService = $fileService;
 
         /** @var ServiceLocatorInterface|PHPUnit_Framework_MockObject_MockObject $serviceLocator */
-        $serviceLocator = $this->getMock('Zend\ServiceManager\ServiceLocatorInterface');
+        $serviceLocator = $this->createMock('Zend\ServiceManager\ServiceLocatorInterface');
         $this->serviceLocator = $serviceLocator;
         $this->serviceLocator->expects($this->any())->method('get')
             ->will($this->returnCallback(function($name) use ($assetsService, $fileService) {

@@ -68,7 +68,7 @@ class EsbTest extends PHPUnit_Framework_TestCase
         $dao->expects($this->any())->method('getRoute')->withAnyParameters()->will($this->returnValue($route));
 
         // Create a mock Client. This will be executed by our client wrapper.
-        $client = $this->getMock('Zend\Http\Client');
+        $client = $this->createMock('Zend\Http\Client');
         $client->expects($this->once())->method('send')->will($this->returnValue($response));
 
         // Create a ClientWrapper to execute our mock Client.
@@ -104,7 +104,7 @@ class EsbTest extends PHPUnit_Framework_TestCase
             }));
 
         // Create a service locator mock to produce instances of our parser and marshaller.
-        $serviceLocator = $this->getMock('Zend\ServiceManager\ServiceLocatorInterface');
+        $serviceLocator = $this->createMock('Zend\ServiceManager\ServiceLocatorInterface');
         $serviceLocator->expects($this->any())->method('get')
             ->will($this->returnCallback(function($name) use ($prototypeFactory)
             {
