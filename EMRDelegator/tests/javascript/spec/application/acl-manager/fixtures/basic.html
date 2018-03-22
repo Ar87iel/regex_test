@@ -1,0 +1,58 @@
+
+<div class="container">
+    <div class="selector">
+        <select class="selector--selector">
+            <option value="1">Something</option>
+            <option value="2">Else</option>
+        </select>
+    </div>
+    <button type="button" class="new-button" accesskey="N">
+        <span class="ui-icon ui-icon-document"></span>
+        <span class="new-button-title">Add <u>N</u>ew Role</span>
+    </button>
+
+    <div class="edit-panel ">
+
+        <p class="edit-panel---titlebar">
+            Some Editor Title <span class="edit-panel--editing-title"></span>
+        </p>
+
+        <form id="edit-form" class="edit-panel--form">
+
+            <button type="button" class="edit-panel--close-button">
+                <span class="ui-icon ui-icon-close"></span>
+            </button>
+
+
+            <div>
+                <div class="label-column">
+                    <label for="roleId">Id:</label>
+                </div>
+                <div class="input-column">
+                    <input type="text" readonly tabindex="-1"
+                           id="roleId" name="roleId">
+                </div>
+            </div>
+
+            <div>
+                <div class="label-column">
+                    <label for="roleName">Name:</label>
+                </div>
+                <div class="input-column">
+                    <input type="text"
+                           id="roleName" name="roleName" data-min-length="2"
+                           data-validation-type="notEmpty minLength" placeholder="Required">
+                </div>
+            </div>
+
+            <div>
+                <input type="button" value="Save Role" id="saveButton" class="edit-panel--save-button">
+                <div class="edit-panel--loading-indicator progress-indicator-long progress-indicator__sized">
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
