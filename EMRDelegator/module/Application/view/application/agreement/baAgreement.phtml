@@ -1,0 +1,65 @@
+<?php
+use EMRDelegator\Model\Agreement;
+use EMRDelegator\Service\Agreement\Dao\Dto\BaaUserData;
+
+/** @var $agreement Agreement */
+$agreement = $this->agreement;
+/** @var BaaUserData $userData */
+$userData = $this->userData;
+
+$agreementUpdated = $agreement->getText();
+$agreementUpdated = str_replace('##day##', date('jS'), $agreementUpdated);
+$agreementUpdated = str_replace('##month##', date('F'), $agreementUpdated);
+$agreementUpdated = str_replace('##year##', date('Y'), $agreementUpdated);
+$agreementUpdated = str_replace('##company##', $userData->getCompany(), $agreementUpdated);
+
+$this->headLink()->appendStylesheet($this->basePath('/css/agreement.css'));
+$this->inlineScript()->appendFile( $this->basePath( 'js/baAgreement.js' ) );
+$renderValue = $this->CsrfViewHelper()->htmlRenderer();
+$preface = $agreement->getPreface();
+
+$preface = '
+    Hi Member,<br><br>
+    A Business Associate Agreement (BAA) is a contract between a HIPAA covered entity and a HIPAA business associate. This contract addresses how both parties will handle protected health information (PHI) in accordance with HIPAA guidelines. The recent Omnibus rule requires electronic medical record software, such as WebPT, to start including a BAA for all Members.<br><br>
+    We designed this agreement to ensure the proper handling of protected health information. It in no way affects pricing, costs, or services for WebPT Members.<br><br>
+    Thank you,<br>
+    WebPT, Inc.<br><br><br>';
+?>
+
+<div id="agreement-container" class='<?= $agreement->getAgreementType()->getTypeKey(); ?> agreement-<?= $agreement->getAgreementId(); ?>' >
+
+    <h1 class='agreement-title' >
+        <?= $agreement->getAgreementType()->getDescription(); ?>
+    </h1>
+    <?php
+    if ($preface) {
+    ?>
+        <div class="preface" >
+           <?= nl2br($preface); ?>
+        </div>
+    <?php
+    }
+    ?>
+
+    <div class="agreement-text" >
+	    <?= nl2br( $agreementUpdated); ?>
+    </div>
+
+    <div class="agreement-panel">
+        <div class="version" >
+            Version: <?= $agreement->getVersion(); ?>
+        </div>
+
+        <form method="post" action="<?= $this->basePath( '/agreement/agreed'); ?>">
+            <?= $renderValue ?>
+            <input type="hidden" name="token" value="<?=$this->token?>"/>
+            <input type="hidden" name="agreementId" value="<?= $agreement->getAgreementId(); ?>"/>
+            <div class="jobtitle-container">
+                <span class="jobtitle-text">Job Title: </span><input type="text" id="jobtitle-input" name="jobTitle" onkeyup="checkAllowSubmit()"/><br />
+            </div>
+            <br/>
+            <input type="submit" id="agreement-submit" value="I Agree" disabled  />
+            <input type='button' value='Cancel (Log Out)' onclick='window.location.href="<?=$this->logoutUrl;?>";' />
+        </form>
+    </div>
+</div>

@@ -1,0 +1,128 @@
+//
+// Basic Grid System
+//
+// Grids help create equally space columnar layouts.
+//
+// Essentially, your grid container gets .grid
+// And the children columns get .grid-col and then a .col-#-# to control their widths.
+//
+// Think of .col-#-# like division, .col-1-2 = 1/2, or 50%. .col-2-3 = 2/3 = 66%, etc.
+// If a specific column size isn't provided, .grid-col's default to 100%;
+//
+// They can be in any combination that totals 100%;
+//
+// Example for 2 equally spaced columns:
+// <div class="grid">
+//    <div class="grid-col col-1-2">...</div>
+//    <div class="grid-col col-1-2">...</div>
+// </div>
+//
+//
+// Example for 2 columns, one taking a third, the other two thirds of the container grid:
+// <div class="grid">
+//    <div class="grid-col col-1-3">...</div>
+//    <div class="grid-col col-2-3">...</div>
+// </div>
+//
+//
+// Note: This system could be extended for a few more features, similarly to (or using):
+//                                              https://github.com/mattberridge/Proportional-Grids
+// I do not feel it is necessary at this time, this system is plenty flexible as is.
+//
+
+
+// Gutter size
+$grid-gutter-width: 16px;
+
+$grid-container-class: 'grid';
+$grid-column-class: 'grid-col';
+
+@mixin set-gutter($gutter) {
+    margin-left: -$gutter;
+
+    .#{$grid-column-class} {
+        padding-left: $gutter;
+    }
+}
+
+@mixin make-grid-container($gutter) {
+    margin-left: -$gutter;
+    overflow: hidden; // Contain floated children
+    clear: both;
+
+}
+
+@mixin make-grid-column($gutter, $propotionalSize) {
+    float: left;
+    padding-left: $gutter;
+    width: $propotionalSize;
+    @include box-sizing(border-box);
+
+}
+
+@mixin grid-config() {
+
+    .#{$grid-container-class} {
+        margin-left: -$grid-gutter-width;
+        overflow: hidden; // Contain floated children
+        clear: both;
+    }
+
+    .#{$grid-column-class} {
+        float: left;
+        padding-left: $grid-gutter-width;
+        width: 100%;
+        @include box-sizing(border-box);
+    }
+
+
+    .large-gutter {
+        @include set-gutter($grid-gutter-width*2);
+    }
+
+    .half-gutter {
+        @include set-gutter($grid-gutter-width/2);
+    }
+
+    .no-gutter {
+        @include set-gutter(0);
+    }
+
+    .reset-gutter {
+        @include set-gutter($grid-gutter-width);
+    }
+
+    // Reset for list grids
+    ul.#{$grid-container-class},
+    ol.#{$grid-container-class} {
+        padding-left: 0;
+        list-style: none;
+    }
+    li.#{$grid-column-class} {
+        margin-left: 0;
+        margin-bottom: 0;
+    }
+
+    // Here for completeness if people want to use them and keep their classes all with the same divisor
+    .col-1-1 { width: 100%; }
+    .col-2-2 { width: 100%; }
+    .col-3-3 { width: 100%; }
+
+    .col-2-3 { width: 66.66%; }
+    .col-1-3 { width: 33.33%; }
+
+    .col-1-2 { width: 50%; }
+    .col-1-4 { width: 25%; }
+    .col-1-8 { width: 12.5%; }
+
+    .col-1-6 { width: 16.66%; }
+    .col-2-6 { width: 33.33%; }
+    .col-3-6 { width: 50%; }
+    .col-4-6 { width: 66.66%; }
+    .col-5-6 { width: 83.33%; }
+}
+
+
+@mixin grids-init($class) {
+    @include grid-config();
+}

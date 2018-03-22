@@ -1,0 +1,32 @@
+<phpunit bootstrap="vendor/autoload.php" backupGlobals="false" processIsolation="false"
+         beStrictAboutTestsThatDoNotTestAnything="true"
+         beStrictAboutOutputDuringTests="true"
+         disallowChangesToGlobalState="true"
+         verbose="true">
+    <php>
+        <ini name="display_errors" value="1" />
+        <ini name="memory_limit" value="256M" />
+    </php>
+    <testsuites>
+        <testsuite name="unit" >
+            <directory>tests/EMRDelegatorTest/unit</directory>
+        </testsuite>
+        <testsuite name="module application unit" >
+            <directory>module/Application/tests/php/ApplicationTest/unit/</directory>
+        </testsuite>
+        <testsuite name="module console unit" >
+            <directory>module/Console/tests/ConsoleTest/unit/</directory>
+        </testsuite>
+        <testsuite name="module service unit" >
+            <directory>module/Service/tests/ServiceTest/unit/</directory>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <whitelist>
+            <directory suffix=".php">module/Application/src</directory>
+            <directory suffix=".php">module/Console/src</directory>
+            <directory suffix=".php">module/Service/src</directory>
+            <directory suffix=".php">vendor/emr-delegator/emr-delegator/src</directory>
+        </whitelist>
+    </filter>
+</phpunit>

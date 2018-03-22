@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="EMRDelegator\Model\Facility" table="Facility" repository-class="EMRDelegator\Model\Repository\Facility">
+    <id name="facilityId" type="integer" column="FacilityId">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="name" type="string" column="Name" length="128" nullable="true"/>
+    <field name="createdAt" type="datetime" column="CreatedAt" nullable="true"/>
+    <field name="lastModified" type="datetime" column="LastModified" nullable="true"/>
+    <many-to-one field="company" target-entity="EMRDelegator\Model\Company" inversed-by="facilities">
+      <join-columns>
+        <join-column name="CompanyId" referenced-column-name="CompanyId"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

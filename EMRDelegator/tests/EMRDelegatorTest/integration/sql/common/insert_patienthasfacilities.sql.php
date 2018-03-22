@@ -1,0 +1,54 @@
+<?php
+return <<<SQL
+INSERT INTO `PatientHasFacility`
+(`RecordId`,
+`FacilityId`,
+`IdentityId`,
+`PatientId`,
+`IsDefault`,
+`CreatedAt`,
+`LastModified`)
+VALUES
+(1,
+1,
+11,
+111,
+false,
+'2013-03-26',
+'2013-03-26'
+);
+INSERT INTO `PatientHasFacility`
+(`RecordId`,
+`FacilityId`,
+`IdentityId`,
+`PatientId`,
+`IsDefault`,
+`CreatedAt`,
+`LastModified`)
+VALUES
+(2,
+1,
+12,
+112,
+false,
+'2013-03-26',
+'2013-03-26'
+);
+INSERT INTO `PatientHasFacility`
+(`RecordId`,
+`FacilityId`,
+`IdentityId`,
+`PatientId`,
+`IsDefault`,
+`CreatedAt`,
+`LastModified`)
+VALUES
+(3,
+3,
+33,
+333,
+false,
+'2013-03-26',
+'2013-03-26'
+);
+SQL;

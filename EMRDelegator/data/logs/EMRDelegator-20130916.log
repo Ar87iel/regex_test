@@ -1,0 +1,75 @@
+2013-09-16 22:06:32.294 T523780e841b027.20647847 P User0 Console.Etl.Controller.CompaniesImportController ERROR 
+Class:   PDOException
+Message: SQLSTATE[HY000] [2002] Can't connect to local MySQL server through socket '/usr/local/zend/mysql/tmp/mysql.sock' (2)
+Code:    2002
+File:    /usr/local/zend/apache2/htdocs/EMRDelegator/library/EMRCore/vendor/ZF2/library/Zend/Db/Adapter/Driver/Pdo/Connection.php(260)
+Trace:   
+#0 /usr/local/zend/apache2/htdocs/EMRDelegator/library/EMRCore/vendor/ZF2/library/Zend/Db/Adapter/Driver/Pdo/Connection.php(260): PDO->__construct('mysql:dbname=sh...', 'root', '', Array)
+#1 /usr/local/zend/apache2/htdocs/EMRDelegator/library/EMRCore/vendor/ZF2/library/Zend/Db/Adapter/Driver/Pdo/Pdo.php(217): Zend\Db\Adapter\Driver\Pdo\Connection->connect()
+#2 /usr/local/zend/apache2/htdocs/EMRDelegator/library/EMRCore/SqlConnector/SqlConnectorAbstract.php(121): Zend\Db\Adapter\Driver\Pdo\Pdo->createStatement('?            se...')
+#3 /usr/local/zend/apache2/htdocs/EMRDelegator/module/Console/src/Console/Etl/Service/CompaniesImport/Dao/Dao.php(74): EMRCore\SqlConnector\SqlConnectorAbstract->query('?            se...', Array, Object(Console\Etl\Service\CompaniesImport\Dao\Dto\CompanyResult))
+#4 /usr/local/zend/apache2/htdocs/EMRDelegator/module/Console/src/Console/Etl/Service/CompaniesImport/CompaniesImport.php(97): Console\Etl\Service\CompaniesImport\Dao\Dao->getCompanies()
+#5 /usr/local/zend/apache2/htdocs/EMRDelegator/module/Console/src/Console/Etl/Controller/CompaniesImportController.php(23): Console\Etl\Service\CompaniesImport\CompaniesImport->importFromLegacy()
+#6 /usr/local/zend/apache2/htdocs/EMRDelegator/library/EMRCore/vendor/ZF2/library/Zend/Mvc/Controller/AbstractActionController.php(88): Console\Etl\Controller\CompaniesImportController->executeAction()
+#7 [internal function]: Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#8 /usr/local/zend/apache2/htdocs/EMRDelegator/library/EMRCore/vendor/ZF2/library/Zend/EventManager/EventManager.php(464): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#9 /usr/local/zend/apache2/htdocs/EMRDelegator/library/EMRCore/vendor/ZF2/library/Zend/EventManager/EventManager.php(208): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#10 /usr/local/zend/apache2/htdocs/EMRDelegator/library/EMRCore/vendor/ZF2/library/Zend/Mvc/Controller/AbstractController.php(107): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 /usr/local/zend/apache2/htdocs/EMRDelegator/library/EMRCore/vendor/ZF2/library/Zend/Mvc/DispatchListener.php(113): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Console\Request), Object(Zend\Console\Response))
+#12 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#13 /usr/local/zend/apache2/htdocs/EMRDelegator/library/EMRCore/vendor/ZF2/library/Zend/EventManager/EventManager.php(464): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#14 /usr/local/zend/apache2/htdocs/EMRDelegator/library/EMRCore/vendor/ZF2/library/Zend/EventManager/EventManager.php(208): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#15 /usr/local/zend/apache2/htdocs/EMRDelegator/library/EMRCore/vendor/ZF2/library/Zend/Mvc/Application.php(297): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#16 /usr/local/zend/apache2/htdocs/EMRDelegator/public/index.php(22): Zend\Mvc\Application->run()
+#17 {main}
+ 
+2013-09-16 22:06:32.296 T523780e841b027.20647847 P User0 Console.Etl.Controller.CompaniesImportController ERROR 
+Class:   PDOException
+Message: SQLSTATE[HY000] [2002] Can't connect to local MySQL server through socket '/usr/local/zend/mysql/tmp/mysql.sock' (2)
+Code:    2002
+File:    /usr/local/zend/apache2/htdocs/EMRDelegator/library/EMRCore/vendor/ZF2/library/Zend/Db/Adapter/Driver/Pdo/Connection.php(260)
+Trace:   
+#0 /usr/local/zend/apache2/htdocs/EMRDelegator/library/EMRCore/vendor/ZF2/library/Zend/Db/Adapter/Driver/Pdo/Connection.php(260): PDO->__construct('mysql:dbname=sh...', 'root', '', Array)
+#1 /usr/local/zend/apache2/htdocs/EMRDelegator/library/EMRCore/vendor/ZF2/library/Zend/Db/Adapter/Driver/Pdo/Pdo.php(217): Zend\Db\Adapter\Driver\Pdo\Connection->connect()
+#2 /usr/local/zend/apache2/htdocs/EMRDelegator/library/EMRCore/SqlConnector/SqlConnectorAbstract.php(121): Zend\Db\Adapter\Driver\Pdo\Pdo->createStatement('?            se...')
+#3 /usr/local/zend/apache2/htdocs/EMRDelegator/module/Console/src/Console/Etl/Service/CompaniesImport/Dao/Dao.php(74): EMRCore\SqlConnector\SqlConnectorAbstract->query('?            se...', Array, Object(Console\Etl\Service\CompaniesImport\Dao\Dto\CompanyResult))
+#4 /usr/local/zend/apache2/htdocs/EMRDelegator/module/Console/src/Console/Etl/Service/CompaniesImport/CompaniesImport.php(97): Console\Etl\Service\CompaniesImport\Dao\Dao->getCompanies()
+#5 /usr/local/zend/apache2/htdocs/EMRDelegator/module/Console/src/Console/Etl/Controller/CompaniesImportController.php(23): Console\Etl\Service\CompaniesImport\CompaniesImport->importFromLegacy()
+#6 /usr/local/zend/apache2/htdocs/EMRDelegator/library/EMRCore/vendor/ZF2/library/Zend/Mvc/Controller/AbstractActionController.php(88): Console\Etl\Controller\CompaniesImportController->executeAction()
+#7 [internal function]: Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#8 /usr/local/zend/apache2/htdocs/EMRDelegator/library/EMRCore/vendor/ZF2/library/Zend/EventManager/EventManager.php(464): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#9 /usr/local/zend/apache2/htdocs/EMRDelegator/library/EMRCore/vendor/ZF2/library/Zend/EventManager/EventManager.php(208): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#10 /usr/local/zend/apache2/htdocs/EMRDelegator/library/EMRCore/vendor/ZF2/library/Zend/Mvc/Controller/AbstractController.php(107): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 /usr/local/zend/apache2/htdocs/EMRDelegator/library/EMRCore/vendor/ZF2/library/Zend/Mvc/DispatchListener.php(113): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Console\Request), Object(Zend\Console\Response))
+#12 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#13 /usr/local/zend/apache2/htdocs/EMRDelegator/library/EMRCore/vendor/ZF2/library/Zend/EventManager/EventManager.php(464): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#14 /usr/local/zend/apache2/htdocs/EMRDelegator/library/EMRCore/vendor/ZF2/library/Zend/EventManager/EventManager.php(208): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#15 /usr/local/zend/apache2/htdocs/EMRDelegator/library/EMRCore/vendor/ZF2/library/Zend/Mvc/Application.php(297): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#16 /usr/local/zend/apache2/htdocs/EMRDelegator/public/index.php(22): Zend\Mvc\Application->run()
+#17 {main}
+ 
+2013-09-16 22:06:32.297 T523780e841b027.20647847 P User0 Console.Etl.Controller.CompaniesImportController ERROR 
+Class:   PDOException
+Message: SQLSTATE[HY000] [2002] Can't connect to local MySQL server through socket '/usr/local/zend/mysql/tmp/mysql.sock' (2)
+Code:    2002
+File:    /usr/local/zend/apache2/htdocs/EMRDelegator/library/EMRCore/vendor/ZF2/library/Zend/Db/Adapter/Driver/Pdo/Connection.php(260)
+Trace:   
+#0 /usr/local/zend/apache2/htdocs/EMRDelegator/library/EMRCore/vendor/ZF2/library/Zend/Db/Adapter/Driver/Pdo/Connection.php(260): PDO->__construct('mysql:dbname=sh...', 'root', '', Array)
+#1 /usr/local/zend/apache2/htdocs/EMRDelegator/library/EMRCore/vendor/ZF2/library/Zend/Db/Adapter/Driver/Pdo/Pdo.php(217): Zend\Db\Adapter\Driver\Pdo\Connection->connect()
+#2 /usr/local/zend/apache2/htdocs/EMRDelegator/library/EMRCore/SqlConnector/SqlConnectorAbstract.php(121): Zend\Db\Adapter\Driver\Pdo\Pdo->createStatement('?            se...')
+#3 /usr/local/zend/apache2/htdocs/EMRDelegator/module/Console/src/Console/Etl/Service/CompaniesImport/Dao/Dao.php(74): EMRCore\SqlConnector\SqlConnectorAbstract->query('?            se...', Array, Object(Console\Etl\Service\CompaniesImport\Dao\Dto\CompanyResult))
+#4 /usr/local/zend/apache2/htdocs/EMRDelegator/module/Console/src/Console/Etl/Service/CompaniesImport/CompaniesImport.php(97): Console\Etl\Service\CompaniesImport\Dao\Dao->getCompanies()
+#5 /usr/local/zend/apache2/htdocs/EMRDelegator/module/Console/src/Console/Etl/Controller/CompaniesImportController.php(23): Console\Etl\Service\CompaniesImport\CompaniesImport->importFromLegacy()
+#6 /usr/local/zend/apache2/htdocs/EMRDelegator/library/EMRCore/vendor/ZF2/library/Zend/Mvc/Controller/AbstractActionController.php(88): Console\Etl\Controller\CompaniesImportController->executeAction()
+#7 [internal function]: Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#8 /usr/local/zend/apache2/htdocs/EMRDelegator/library/EMRCore/vendor/ZF2/library/Zend/EventManager/EventManager.php(464): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#9 /usr/local/zend/apache2/htdocs/EMRDelegator/library/EMRCore/vendor/ZF2/library/Zend/EventManager/EventManager.php(208): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#10 /usr/local/zend/apache2/htdocs/EMRDelegator/library/EMRCore/vendor/ZF2/library/Zend/Mvc/Controller/AbstractController.php(107): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#11 /usr/local/zend/apache2/htdocs/EMRDelegator/library/EMRCore/vendor/ZF2/library/Zend/Mvc/DispatchListener.php(113): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Console\Request), Object(Zend\Console\Response))
+#12 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#13 /usr/local/zend/apache2/htdocs/EMRDelegator/library/EMRCore/vendor/ZF2/library/Zend/EventManager/EventManager.php(464): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#14 /usr/local/zend/apache2/htdocs/EMRDelegator/library/EMRCore/vendor/ZF2/library/Zend/EventManager/EventManager.php(208): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#15 /usr/local/zend/apache2/htdocs/EMRDelegator/library/EMRCore/vendor/ZF2/library/Zend/Mvc/Application.php(297): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#16 /usr/local/zend/apache2/htdocs/EMRDelegator/public/index.php(22): Zend\Mvc\Application->run()
+#17 {main}
+ 

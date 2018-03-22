@@ -1,0 +1,137 @@
+////////////////////////////////////////////////
+// EMRApp "Simple Zebra" Theme Elements
+////////////////////////////////////////////////
+
+@import "../partials/_wpt.scss"; // Only vars/mixins, so safe to (re-)include
+
+
+table.simple-zebra {
+
+    %simple-zebra-table-banner {
+        background: $light-blue;
+
+        font-weight: bold;
+        color: $black;
+    }
+
+    thead {
+        @extend %simple-zebra-table-banner;
+        border-bottom: 1px solid $legacy-blue;
+
+        th {
+            padding: .2em;
+            font-size: 1.18em; // 13px at 11px
+            text-align: left;
+
+            &.sorting_asc {
+                background: url("../images/glyphs/sorting/simple-zebra-blue-arrows/sort_asc.png") no-repeat center right;
+            }
+
+            &.sorting_desc {
+                background: url("../images/glyphs/sorting/simple-zebra-blue-arrows/sort_desc.png") no-repeat center right;
+            }
+        }
+    }
+
+    tbody {
+
+        .odd {
+            background: $white;
+        }
+
+        .even {
+            background: $legacy-light-blue;
+        }
+
+        td {
+            font-size: 1.18em; // 13px at 11px
+
+            color: $black;
+
+            padding: 2px; // Overwrite the generic DataTable style
+
+            a {
+                color: $medium-coal;
+                text-decoration: none;
+
+                &:hover, &:focus {
+                    color: $black;
+                }
+
+                &:active {
+                    color: $black;
+                }
+
+            }
+
+
+        }
+
+
+        .group {
+            font-weight: bold;
+        }
+
+        // Hide empty group column
+        .group.aa0nogroup {
+            display: none;
+        }
+
+    }
+
+    ////////////////////////////////////////////////
+    // Rounded corner options
+    ////////////////////////////////////////////////
+
+    // Some pages have the right corner "rounded"
+    &.rounded-right-corner {
+        th:last-child {
+            @include border-radius(0 5px 0 0);
+        }
+    }
+
+    // Some pages have the left corner "rounded"
+    &.rounded-left-corner {
+        th:first-child {
+            @include border-radius(5px 0 0 0);
+        }
+    }
+
+    // Some pages have both corners "rounded"
+    &.rounded-both-corners {
+        @extend .rounded-right-corner;
+        @extend .rounded-left-corner;
+    }
+
+    ////////////////////////////////////////////////
+    // Alternate form options
+    ////////////////////////////////////////////////
+
+    // Temporary class to get the smaller text sizes used on some pages
+    &.temp-small-headers {
+        thead th {
+            font-size: 1em;
+        }
+    }
+
+    // This class turns tfoot elements into blue banners
+    &.decorated-footer {
+        tfoot {
+
+            tr {
+                @extend %simple-zebra-table-banner;
+                border-top: 1px solid $legacy-blue;
+            }
+
+            td {
+                padding: -wpt-px-to-em(2,11); // 2px at 11px
+            }
+        }
+    }
+
+    // This class provides a small padding around most cells to replicate some form's patterns
+    &.breathing-room {
+
+    }
+
+}

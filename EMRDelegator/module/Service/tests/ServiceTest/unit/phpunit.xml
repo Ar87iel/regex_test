@@ -1,0 +1,12 @@
+<phpunit bootstrap="./bootstrap.php" backupGlobals="false" processIsolation="false">
+    <testsuites>
+        <testsuite name="EMRDelegator Service Module Unit Test Suite">
+            <directory>./</directory>
+        </testsuite>
+    </testsuites>
+    <groups>
+        <exclude>
+            <group></group>
+        </exclude>
+    </groups>
+</phpunit>

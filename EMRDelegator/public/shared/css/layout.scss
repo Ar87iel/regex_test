@@ -1,0 +1,114 @@
+// Styles for standard EMR App Layout
+@import "partials/_wpt.scss";
+
+
+// From paulirish.com/2012/box-sizing-border-box-ftw/
+// but I'm still not sold on this
+// * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+// Base sizings
+body {
+    font-size: 68.75%; // 11 px base font size
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+////////////////////////////////////////////////
+// Master Page Loading Panel
+////////////////////////////////////////////////
+body > .master-page-loading-panel {
+    width: 100%;
+    height: 100%;
+    background: white;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+}
+
+////////////////////////////////////////////////
+// EMR Common Layout
+////////////////////////////////////////////////
+
+// The brand header and general user (and internal) toolbars
+// Temporarily just an image
+body > .header {
+    background: url('../images/temporary/structural/header.png') no-repeat;
+    width: 100%;
+    height: 131px;
+    padding-bottom: .5em;
+}
+
+// The menu on the side used to navigate the app
+// Temporarily just an image
+body > .sidebar {
+    background: url('../images/temporary/structural/sidebar.png') no-repeat;
+    width: 19%;
+    @include box-sizing(border-box);
+    float: left;
+
+    // For graphic image, for now, hardcode for better appearance
+    min-width: 156px;
+    max-width: 179px;
+    min-height: 500px; // Temp
+}
+
+// The actual window page views get rendered into
+body > .content-window {
+    width: 81%;
+    min-height: 131px;
+    @include box-sizing(border-box);
+    float: left;
+    padding-right: 0.5em;
+}
+
+// Layout's footer
+// Temporarily just an image
+body > .footer {
+    background: url('../images/temporary/structural/footer.png') no-repeat;
+    width: 100%;
+    height: 52px;
+    float: left;
+}
+
+
+////////////////////////////////////////////////
+// EMR Common Elements
+////////////////////////////////////////////////
+
+
+// Blue, rounded edge section bar
+.section-divider {
+    background: $legacy-blue;
+    @include border-radius( $emr-app-border-radius );
+    width: 100%;
+    height: 2.272em;
+    margin: .633em 0;
+}
+
+
+////////////////////////////////////////////////
+// EMR Content Window Common Elements
+////////////////////////////////////////////////
+
+
+// A content window's first level headings can vary depending on classnames
+.content-window h1 {
+    color: $light-coal;
+    font-size: 1.454em;
+
+    // Page titles are offset a little,
+    // and utilize the margin already in place from header
+    &.page-title {
+        margin: .5em;
+        margin-left: .5em;
+    }
+
+    // Some pages have a blue border under their headings
+    &.with-border {
+        border-bottom: 2px solid #006699;
+    }
+}
+
+@import "layout_partials/_rigid.scss";
+
+@import "layout_partials/_simple-zebra.scss";

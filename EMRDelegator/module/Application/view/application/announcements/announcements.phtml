@@ -1,0 +1,37 @@
+<?php
+use EMRDelegator\Model\Announcement;
+
+/** @var $announcements Announcement[] */
+$announcements = $this->announcements;
+
+$this->headLink()->appendStylesheet( $this->basePath( '/css/announcements.css'));
+
+?>
+<div id="announcements-container" >
+    <h1 class='section-header-bar title'>
+        System Notification
+    </h1>
+    <form method="post" action="<?= $this->basePath('/announcements/acknowledged'); ?>">
+        <input type='hidden' name='token' value="<?=$this->token?>"/>
+        <input type='hidden' name='facility' value="<?=$this->facilityId?>"/>
+        <?php
+        foreach ( $announcements as $announcement)
+        {
+            ?>
+            <div class='announcement announcement-<?= $announcement->getAnnouncementId(); ?>' >
+                <input type='hidden' name='announcementId[]' value='<?= $announcement->getAnnouncementId(); ?>' />
+                <div class='title' >
+                    <?= $announcement->getTitle(); ?>
+                </div>
+                <div class='description' >
+                    <?= $announcement->getDescription(); ?>
+                </div>
+            </div>
+        <?php
+        }
+        ?>
+        <div class='alignRight' >
+            <input type='submit' value='Continue' />
+        </div>
+    </form>
+</div>

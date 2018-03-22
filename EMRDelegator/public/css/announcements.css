@@ -1,0 +1,49 @@
+body {
+  background: url("../images/background/color-line.png") repeat-x scroll 0 0 #FFFFFF;
+  padding-top: 4px; }
+
+body {
+  font-size: 11px;
+  font-family: Verdana, Geneva, sans-serif; }
+
+#page-content {
+  max-width: 960px;
+  margin: 40px auto 0;
+  padding: 0 1em; }
+
+#announcements-container {
+  font-size: 1.090em; }
+  #announcements-container h1.title {
+    background: url("../images/announcements/title.bg.png") no-repeat 0 0;
+    height: 30px;
+    line-height: 30px;
+    overflow: hidden;
+    margin: 0.67em 0;
+    padding-left: 1em;
+    font-weight: bold;
+    font-size: 1.16em;
+    color: #fff; }
+  #announcements-container .announcement {
+    padding: 0 6px 2.67em;
+    margin: 0 0 2.67em; }
+    #announcements-container .announcement:first-child {
+      margin-top: 0;
+      padding-top: 0; }
+    #announcements-container .announcement .title {
+      font-weight: bold;
+      margin-bottom: 0.67em; }
+    #announcements-container .announcement .description {
+      padding: 0 12px; }
+  #announcements-container .alignRight {
+    text-align: right;
+    border-top: 2px solid #cccccc;
+    margin-right: 0px;
+    margin-left: 0px;
+    bottom: 0;
+    position: fixed;
+    max-width: 930px;
+    width: 100%;
+    background-color: #FFFFFF;
+    padding: 10px; }
+
+/*# sourceMappingURL=announcements.css.map */

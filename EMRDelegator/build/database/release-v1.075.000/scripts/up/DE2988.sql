@@ -1,0 +1,1 @@
+ALTER TABLE `IdentityAnnouncements` ADD INDEX `idx_IdentityID` (`IdentityId`,`LastAcknowledged`);

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="EMRDelegator\Model\Cluster" table="Cluster" repository-class="EMRDelegator\Model\Repository\Cluster">
+    <id name="clusterId" type="integer" column="ClusterId">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="name" type="string" column="Name" length="128" nullable="true"/>
+    <field name="maxFacilityCount" type="integer" column="MaxFacilityCount" nullable="false"/>
+    <field name="currentFacilityCount" type="integer" column="CurrentFacilityCount" nullable="false"/>
+    <field name="acceptingNewCompanies" type="boolean" column="AcceptingNewCompanies" nullable="false"/>
+    <field name="onlineStatus" type="string" column="OnlineStatus" length="40" nullable="true"/>
+    <field name="comment" type="text" column="Comment" nullable="true"/>
+    <field name="createdAt" type="datetime" column="CreatedAt" nullable="true"/>
+    <field name="lastModified" type="datetime" column="LastModified" nullable="true"/>
+    <one-to-many target-entity="EMRDelegator\Model\Company" mapped-by="cluster" field="companies">
+        <order-by>
+            <order-by-field name="name" direction="ASC" />
+        </order-by>
+    </one-to-many>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,44 @@
+@import "partials/_colorLine.scss";
+@import "partials/layout/_layout.scss";
+@import "partials/interceptor.scss";
+
+#announcements-container {
+
+    font-size: 1.090em; // 12px from 11px
+
+    h1.title {
+        @include section-header-bar;
+    }
+
+    .announcement {
+        padding:0 6px 2.67em;
+        margin:0 0 2.67em;
+
+        &:first-child {
+            margin-top:0;
+            padding-top:0;
+        }
+
+        .title {
+            font-weight:bold;
+            margin-bottom:0.67em;
+        }
+
+        .description {
+            padding:0 12px;
+        }
+    }
+
+    .alignRight {
+        text-align:right;
+        border-top: 2px solid #cccccc;
+        margin-right: 0px;
+        margin-left: 0px;
+        bottom: 0;
+        position: fixed;
+        max-width: 930px;
+        width: 100%;
+        background-color: #FFFFFF;
+        padding: 10px;
+    }
+}

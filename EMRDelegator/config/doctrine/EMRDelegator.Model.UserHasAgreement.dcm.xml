@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+    <entity name="EMRDelegator\Model\UserHasAgreement" table="UserHasAgreement">
+        <id name="recordId" type="integer" column="RecordId">
+            <generator strategy="IDENTITY"/>
+        </id>
+        <field name="identityId" type="integer" column="IdentityId" nullable="false"/>
+        <field name="remoteAddress" type="string" length="15" column="RemoteAddress" nullable="true"/>
+        <field name="created" type="datetime" column="Created" nullable="false"/>
+        <field name="lastModified" type="datetime" column="LastModified" nullable="true"/>
+        <field name="jobTitle" type="string" length="45" column="JobTitle" nullable="true"/>
+        <one-to-one field="agreement" target-entity="EMRDelegator\Model\Agreement">
+            <join-columns>
+                <join-column name="AgreementId" referenced-column-name="AgreementId"/>
+            </join-columns>
+        </one-to-one>
+    </entity>
+</doctrine-mapping>

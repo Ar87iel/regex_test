@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="EMRDelegator\Model\PatientHasFacility" table="PatientHasFacility" repository-class="EMRDelegator\Model\Repository\PatientHasFacility">
+    <id name="recordId" type="integer" column="RecordId">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="identityId" type="integer" column="IdentityId" nullable="false"/>
+    <field name="isDefault" type="boolean" column="IsDefault" nullable="false"/>
+    <field name="patientId" type="integer" column="PatientId" nullable="false"/>
+    <field name="createdAt" type="datetime" column="CreatedAt" nullable="true"/>
+    <field name="lastModified" type="datetime" column="LastModified" nullable="true"/>
+    <many-to-one field="facility" target-entity="EMRDelegator\Model\Facility">
+      <join-columns>
+        <join-column name="FacilityId" referenced-column-name="FacilityId"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

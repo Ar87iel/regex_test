@@ -1,0 +1,6 @@
+// Include this partial to bring in the color bar at the top of the screen via body's background
+
+body {
+    background: url("../images/background/color-line.png") repeat-x scroll 0 0 #FFFFFF;
+    padding-top: 4px;
+}

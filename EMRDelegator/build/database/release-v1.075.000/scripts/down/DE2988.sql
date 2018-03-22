@@ -1,0 +1,1 @@
+ALTER TABLE `IdentityAnnouncements` DROP INDEX `idx_IdentityID`;

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="EMRDelegator\Model\Company" table="Company" repository-class="EMRDelegator\Model\Repository\Company">
+    <id name="companyId" type="integer" column="CompanyId">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="name" type="string" column="Name" length="128" nullable="true"/>
+    <field name="onlineStatus" type="string" column="OnlineStatus" length="40" nullable="true"/>
+    <field name="migrationStatus" type="string" column="MigrationStatus" length="40" nullable="true"/>
+    <field name="createdAt" type="datetime" column="CreatedAt" nullable="true"/>
+    <field name="lastModified" type="datetime" column="LastModified" nullable="true"/>
+    <one-to-many target-entity="EMRDelegator\Model\Facility" mapped-by="company" field="facilities">
+        <order-by>
+            <order-by-field name="name" direction="ASC" />
+        </order-by>
+    </one-to-many>
+    <many-to-one field="cluster" target-entity="EMRDelegator\Model\Cluster">
+      <join-columns>
+        <join-column name="ClusterId" referenced-column-name="ClusterId"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,117 @@
+-----------------------------------------------------------------------------------------------------
+- ETL Scripts Config - BEGIN
+-----------------------------------------------------------------------------------------------------
+
+The following config changes and scripts need to be applied. These configs drive all ETL scripts in this slice.
+
+Verify the following configs variables are present and are setup to point to the proper databases:
+$mysqlAdapter = 'EMRCore\SqlConnector\Mysql\Adapter';
+$legacyDatabase = array(
+    'port' => 3306,
+    'host' => 'localhost',
+    'database' => 'app_webpt_com',
+    'username' => 'root',
+    'password' => '',
+    'driver' => 'pdo_mysql'
+);
+
+$ssoDatabase = array(
+    'port' => 3306,
+    'host' => 'localhost',
+    'database' => 'sso_webpt_com',
+    'username' => 'root',
+    'password' => '',
+    'driver' => 'pdo_mysql'
+);
+
+$delegatorDatabase = array(
+    'port' => 3306,
+    'host' => 'localhost',
+    'database' => 'delegator_webpt_com',
+    'username' => 'root',
+    'password' => '',
+    'driver' => 'pdo_mysql'
+);
+
+Verify the following configs options are present in the local.php config file:
+SqlConnector::CONFIG_KEY => array(
+        // read only adapter for legacy database
+        'Console\Etl\SqlConnector\Legacy\ReaderWriterDiInterface' => array(
+            'adapter' => $mysqlAdapter,
+            'params' => array(
+                'driver' => $legacyDatabase['driver'],
+                'host' => $legacyDatabase['host'],
+                'port' => $legacyDatabase['port'],
+                'username' => $legacyDatabase['username'],
+                'password' => $legacyDatabase['password'],
+                'database' => $legacyDatabase['database'],
+            ),
+        ),
+        // read/write adapter for legacy database
+        'Console\Etl\SqlConnector\Sso\ReaderWriterDiInterface' => array(
+            'adapter' => $mysqlAdapter,
+            'params' => array(
+                'driver' => $ssoDatabase['driver'],
+                'host' => $ssoDatabase['host'],
+                'port' => $ssoDatabase['port'],
+                'username' => $ssoDatabase['username'],
+                'password' => $ssoDatabase['password'],
+                'database' => $ssoDatabase['database'],
+            ),
+        ),
+        // read only adapter for sso database
+        'Console\Etl\SqlConnector\Delegator\ReaderWriterDiInterface' => array(
+            'adapter' => $mysqlAdapter,
+            'params' => array(
+                'driver' => $delegatorDatabase['driver'],
+                'host' => $delegatorDatabase['host'],
+                'port' => $delegatorDatabase['port'],
+                'username' => $delegatorDatabase['username'],
+                'password' => $delegatorDatabase['password'],
+                'database' => $delegatorDatabase['database'],
+            ),
+        ),
+    ),
+
+-----------------------------------------------------------------------------------------------------
+- ETL Scripts Config - END
+-----------------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------
+- COMPANY & FACILITY MIGRATION - BEGIN
+-----------------------------------------------------------------------------------------------------
+Companies and Facilities need to be copied from the current EMR database into the Delegator schema.
+
+Need to run the following scripts:
+(dependant upon the previous config setting being setup)
+EMRDelegator/public/index.php etl companiesimport
+EMRDelegator/public/index.php etl facilitiesimport
+EMRDelegator/public/index.php etl userhasfacilityimport
+
+-----------------------------------------------------------------------------------------------------
+- COMPANY & FACILITY MIGRATION - END
+-----------------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------
+- AGREEMENTS MIGRATION - BEGIN
+-----------------------------------------------------------------------------------------------------
+AgreementTypes, Agreements and UserHasAgreements need to be copied from the current EMR database into
+the Delegator schema.
+
+Need to run the following scripts:
+(dependant upon the previous config setting being setup)
+EMRDelegator/public/index.php etl agreements
+
+-----------------------------------------------------------------------------------------------------
+- AGREEMENTS MIGRATION - END
+-----------------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------------
+- Configure Logout ESB route
+-----------------------------------------------------------------------------------------------------
+'slices' => array(
+        'delegator' => array(
+            'logout' => 'https://delegator.webpt.vagrant' //uri to initiate cluster logout
+        ),
+    ),

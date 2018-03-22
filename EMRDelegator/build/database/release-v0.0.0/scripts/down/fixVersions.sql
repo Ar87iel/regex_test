@@ -1,0 +1,1 @@
+update version set script = 'changeTNtoBoolean.sql' where script = 'changeYNtoBoolean.sql' ;

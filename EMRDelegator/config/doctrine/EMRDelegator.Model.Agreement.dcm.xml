@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="EMRDelegator\Model\Agreement" table="Agreement" repository-class="EMRDelegator\Model\Repository\Agreement">
+    <id name="agreementId" type="integer" column="AgreementId">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="version" type="string" column="Version" length="45" nullable="false"/>
+    <field name="agreementDate" type="date" column="AgreementDate" nullable="false"/>
+    <field name="preface" type="string" column="Preface" nullable="true"/>
+    <field name="text" type="string" column="Text" nullable="true"/>
+    <field name="created" type="datetime" column="Created" nullable="false"/>
+    <field name="lastModified" type="datetime" column="LastModified" nullable="true"/>
+    <many-to-one field="agreementType" target-entity="EMRDelegator\Model\AgreementType">
+          <join-columns>
+              <join-column name="AgreementTypeId" referenced-column-name="AgreementTypeId"/>
+          </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

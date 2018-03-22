@@ -1,0 +1,4 @@
+INSERT INTO `Announcement` (`Title`, `Description`, `DateTimeBegin`, `DateTimeEnd`) VALUES ('Quarterly Survey', "It\\\'s time for the WebPT Quarterly Member Survey. It\\\'s just one quick question, so please take a split second to answer it. Thanks! <br /><br /> <script type=\\\"text/javascript\\\" >document.write(\'<script src=\\\"http\\\' + ( (\\\"https:\\\" == document.location.protocol) ? \\\"s\\\" : \\\"\\\") + \\\'://www.surveygizmo.com/s3/js/1457461/6a2ed949bcc4?__ref= \\\' + escape(document.location) + \\\'\\\" type=\\\"text/javascript\\\" ></scr\\\'  + \\\'ipt>\\\');</script><noscript> This survey is powered by SurveyGizmo\\\'s <a href=\\\" http://www.surveygizmo.com \\\">online survey software</a>. <a href=\\\" http://www.surveygizmo.com/s3/jsfallback/1457461/6a2ed949bcc4 \\\">Please take my survey now</a></noscript> ", '2013-12-12 08:00:00', '2013-12-13 08:00:00');
+
+
+INSERT INTO `DatabaseVersion` VALUES (NULL, '1.0.0', '', 'US5027', 'US5027.sql', NULL);

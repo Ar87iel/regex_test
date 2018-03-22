@@ -1,0 +1,54 @@
+<project name="EMRDelegator" default="develop" basedir=".">
+    <property name="coverage-text" value=""/>
+    <property file="${project.basedir}/build/ci/resources/php.properties"/>
+    <property file="${project.basedir}/build/ci/resources/build.properties"/>
+
+    <target name="develop" depends="composer"/>
+    <target name="sdev" depends="composer, run-all-tests"/>
+    <target name="prod" depends="composernodev"/>
+    <target name="gitlab-ci" depends="gitlab-ci-config, composer, run-all-tests"/>
+
+    <target name="run-all-tests">
+        <exec command="composer run:unit-tests" passthru="true" output="/dev/stdout" error="/dev/stdout" checkreturn="true"/>
+        <exec command="composer run:integration-tests" passthru="true" output="/dev/stdout" error="/dev/stdout" checkreturn="true"/>
+    </target>
+
+    <target name="composer">
+
+        <exec
+                command="composer --no-interaction install"
+                passthru="true"
+                output="/dev/stdout"
+                error="/dev/stdout"
+                checkreturn="true"
+                />
+
+    </target>
+
+    <target name="composernodev">
+
+        <exec
+                command="composer --no-interaction --no-dev install"
+                passthru="true"
+                output="/dev/stdout"
+                error="/dev/stdout"
+                checkreturn="true"
+                />
+
+    </target>
+
+    <target name="gitlab-ci-config">
+
+        <property name="coverage-text" value="--coverage-text=php://stdout"/>
+
+        <exec
+		command="cp tests/EMRDelegatorTest/integration/config/local.php.ci tests/EMRDelegatorTest/integration/config/local.php"
+                passthru="true"
+                output="/dev/stdout"
+                error="/dev/stdout"
+                checkreturn="true"
+                />
+
+    </target>
+
+</project>

@@ -1,0 +1,1 @@
+UPDATE `Agreement` SET `Preface`=NULL WHERE `AgreementId`='5';

@@ -1,0 +1,38 @@
+<?php
+
+$this->headLink()->appendStylesheet( $this->basePath( '/css/normalize.css'));
+
+?>
+<?= $this->doctype(); ?>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <?= $this->headMeta()->appendName('viewport', 'width=device-width, initial-scale=1.0') ?>
+
+    <?php
+    if(true === extension_loaded('newrelic')) {
+        print newrelic_get_browser_timing_header();
+    }
+    ?>
+    <?= $this->headMeta()?>
+    <?= $this->headTitle()?>
+    <?= $this->headLink()?>
+    <?= $this->headStyle()?>
+    <?= $this->headScript()?>
+</head>
+<body>
+
+<div id='page-content' >
+    <img class='logo' src="<?= $this->basePath('/images/WebPtLogo.jpg'); ?>" width="178" height="40" alt="WebPT Logo" />
+
+    <?= $this->content; ?>
+</div>
+<?= $this->inlineScript(); ?>
+
+<?php
+if(true === extension_loaded('newrelic')) {
+    print newrelic_get_browser_timing_footer();
+}
+?>
+</body>
+</html>

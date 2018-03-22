@@ -1,0 +1,51 @@
+{
+    "name": "webpt/emr-delegator",
+    "description": "EMRDelegator Application and Web Services",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packagist.webpt.com"
+        }
+    ],
+    "require": {
+        "webpt/emr-core": "^3.0",
+        "doctrine/orm": "2.4.6",
+        "zendframework/zendframework": "2.2.0",
+        "webpt/emr-csrf-module": "^1.0.1",
+        "neeckeloo/newrelic": "^1.0",
+        "webpt/xss-module": "^3.1.0"
+    },
+    "require-dev": {
+        "swagger-api/swagger-ui": "^2.2",
+        "phpunit/phpunit": "4.*",
+        "webpt/emr-delegator-api-docs": "^0.1"
+    },
+    "autoload": {
+        "psr-0": {
+            "EMRDelegator\\": "vendor/emr-delegator/emr-delegator/src/",
+            "Application\\": "module/Application/src/",
+            "Console\\": "module/Console/src/",
+            "Service\\": "module/Service/src/"
+        },
+        "psr-4": {
+            "EMRDelegator\\Cluster\\Marshaller\\": "vendor/emr-delegator/emr-delegator/src/EMRDelegator/Service/Cluster/Marshaller/",
+            "EMRDelegator\\Company\\Marshaller\\": "vendor/emr-delegator/emr-delegator/src/EMRDelegator/Service/Company/Marshaller/",
+            "EMRDelegator\\Facility\\Marshaller\\": "vendor/emr-delegator/emr-delegator/src/EMRDelegator/Service/Facility/Marshaller/"
+        }
+    },
+    "scripts": {
+        "run:coverage-report": "vendor/bin/phpunit --coverage-text",
+        "run:integration-tests": "vendor/bin/phpunit -c tests/EMRDelegatorTest/integration",
+        "run:unit-tests": "vendor/bin/phpunit"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "EMRDelegatorTest\\Integration\\Lib\\": "tests/EMRDelegatorTest/integration/lib/",
+            "ConsoleTest\\Unit\\Service\\SelectAndInsert\\": "module/Console/tests/ConsoleTest/unit/tests/Service/SelectAndInsert/"
+        },
+        "files" : [
+            "tests/EMRDelegatorTest/integration/tests/Console/Etl/Service/Dao/SelectAndInsertTest.php",
+            "module/Application/Module.php"
+        ]
+    }
+}

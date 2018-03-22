@@ -1,0 +1,51 @@
+<?php
+
+use Zend\Config\Config;
+
+// Override shared settings in your slice local config (this file).
+return array(
+
+    'tokens' => array(
+
+        'CLUSTER_ASSIGNMENT_COOKIE_NAME' => 'CLUSTERDEV',
+        'CLUSTER_ASSIGNMENT_COOKIE_DOMAIN' => 'webpt.com',
+
+        // Slice (default) read-write connection.
+        'DB_WRITER_HOST' => 'docker.webpt.com__devops__docker-tinydb',
+        'DB_WRITER_USERNAME' => 'vagrant',
+        'DB_WRITER_PASSWORD' => 'vagrant',
+        'DB_WRITER_SCHEMA' => 'test',
+
+        // Slice (default) read-only connection.
+        'DB_READER_HOST' => 'docker.webpt.com__devops__docker-tinydb',
+        'DB_READER_USERNAME' => 'vagrant',
+        'DB_READER_PASSWORD' => 'vagrant',
+        'DB_READER_SCHEMA' => 'test',
+
+        // Multi-tenant ETL writer connection.
+        'DB_MULTI_TENANT_WRITER_HOST' => 'docker.webpt.com__devops__docker-tinydb',
+        'DB_MULTI_TENANT_WRITER_USERNAME' => 'vagrant',
+        'DB_MULTI_TENANT_WRITER_PASSWORD' => 'vagrant',
+        'DB_MULTI_TENANT_WRITER_SCHEMA' => 'test',
+
+        // Auth ETL writer connection.
+        'DB_AUTH_WRITER_HOST' => 'docker.webpt.com__devops__docker-tinydb',
+        'DB_AUTH_WRITER_USERNAME' => 'vagrant',
+        'DB_AUTH_WRITER_PASSWORD' => 'vagrant',
+        'DB_AUTH_WRITER_SCHEMA' => 'test',
+
+        'CACHE_APPLICATION_DATA' => 'memcached:11211',
+        'CACHE_APPLICATION_SESSION' => 'memcached:11211',
+        'CACHE_DOCTRINE_METADATA' => 'memcached:11211',
+        'CACHE_AUTHENTICATION_SESSION' => 'memcached:11211',
+        'CACHE_AUTHORIZATION_SESSION' => 'memcached:11211',
+
+        // Display error settings.
+        'DISPLAY_ERRORS' => 'stdout', // Set to 'stdout' to see warnings and notices.
+        'DISPLAY_EXCEPTIONS' => true, // Set to true in development to see exceptions
+
+        // Logger settings.
+        'LOGGER_ROOT_LEVEL' => 'TRACE',
+    ),
+);
+

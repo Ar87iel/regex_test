@@ -1,0 +1,51 @@
+<?php
+use EMRDelegator\Model\Agreement;
+
+/** @var $agreement Agreement */
+$agreement = $this->agreement;
+
+$this->headLink()->appendStylesheet($this->basePath('/css/agreement.css'));
+$renderValue = $this->CsrfViewHelper()->htmlRenderer();
+$preface = $agreement->getPreface();
+
+?>
+
+<div id="agreement-container" class='<?= $agreement->getAgreementType()->getTypeKey(); ?> agreement-<?= $agreement->getAgreementId(); ?>' >
+
+    <h1 class='agreement-title' >
+        <?= $agreement->getAgreementType()->getDescription(); ?>
+    </h1>
+    <?php
+    if ($preface) {
+        ?>
+        <div class="preface" >
+            <?= nl2br($preface); ?>
+        </div>
+    <?php
+    }
+    ?>
+
+    <div class="agreement-text" >
+        <?= nl2br( $agreement->getText()); ?>
+    </div>
+
+    <div class="agreement-panel">
+        <div class="version" >
+            Version: <?= $agreement->getVersion(); ?>
+        </div>
+
+        <form method="post" action="<?= $this->basePath( '/agreement/agreed'); ?>">
+            <?= $renderValue ?>
+            <input type="hidden" name="token" value="<?=$this->token?>"/>
+            <input type="hidden" name="facilityId" value="<?=$this->facilityId?>"/>
+            <input type="hidden" name="agreementId" value="<?= $agreement->getAgreementID(); ?>"/>
+            <?php
+            if($this->ghostId) {
+                echo '<input type="hidden" name="ghostId" value="'.$this->ghostId.'"/>';
+            }
+            ?>
+            <input type="submit" value="I Agree" />
+            <input type='button' value='Cancel (Log Out)' onclick='window.location.href="<?=$this->logoutUrl?>";' />
+        </form>
+    </div>
+</div>

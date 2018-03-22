@@ -1,0 +1,152 @@
+////////////////////////////////////////////////
+// EMRApp "Rigid" Theme Elements
+////////////////////////////////////////////////
+
+@import "../partials/_wpt.scss"; // Only vars/mixins, so safe to (re-)include
+
+// Rigid headers have slightly large white text against a background
+%rigid-header {
+    background: #069;
+    color: white;
+    padding: .2em;
+    margin: 0;
+    font-size: 1.273em;
+}
+
+// A content window's first level heading can vary depending on classnames
+.content-window h1 {
+
+    // Some headers are white against long background colors
+    &.rigid-header {
+        @extend %rigid-header;
+    }
+}
+
+
+// A square-ish section with a thin blue outline.
+// Designed to contain long headers colored
+// white on dark blue that stretch all the way across.
+.rigid-section {
+    border: 1px solid $legacy-blue;
+
+    // Affect children elements with .rigid-header
+    .rigid-header,
+    // Affect children h1s
+    &> h1 {
+        // Re-use so we don't require .rigid-header
+        @extend %rigid-header;
+    }
+
+    &.with-spacing {
+
+        // We space first-level children divs because
+        // the h1s have to span the entire container
+        // with no margin
+        &> div {
+            margin: 1em;
+            overflow: hidden; // Contain any floated children
+
+            &.dont-overflow-hidden {
+                overflow: inherit;
+                *overflow: visible; // IE7 doesn't understand inherit here
+            }
+        }
+
+    }
+
+}
+
+// Basic rigid input style
+.rigid-input {
+    border: 1px solid $legacy-blue;
+    background: #F5F5F5;
+}
+
+
+// Used on forms that only need the rigid-input on children
+// @todo this should also handle centering them perhaps?
+.borderless-rigid-form {
+
+    @extend .rigid-input-on-children-inputs;
+
+    margin: auto; // These forms are centered
+
+    @include cell-spacing(5px);
+    @include cell-padding(5px);
+}
+
+// For use with containers to style all children form inputs to look as though
+// they have .rigid-input applied.
+.rigid-input-on-children-inputs {
+    input[type=text],
+    select,
+    textarea {
+        @extend .rigid-input;
+    }
+}
+
+// Commonly used forms on Rigid themed pages
+.rigid-form,
+.company-style-form {
+
+    // Hide standard fieldset border styling
+    fieldset {
+        border: 0;
+        margin: 0 0 1em 0;
+        padding: 0;
+    }
+
+    // Style legends as section headers
+    legend {
+        color: $black;
+        font-weight: bold;
+        font-size: 1.090em;
+
+        margin: .5em 0;
+    }
+
+    label {
+        text-align: right;
+        float: left;
+        //width: 33%;
+        @include box-sizing(border-box);
+
+        line-height: 1.636; // 18px line height for 11px font size
+        width: 125px;
+        width: 11.363em;
+
+        padding-right: 1em; // Breathing room from inputs
+    }
+
+    // Use span to cause input to contain remaining space
+    span {
+        display: block;
+        overflow: hidden;
+        padding-right: .454em;
+        *padding-right: 1em;
+    }
+
+    // Input styling
+    input[type=text],
+    select,
+    textarea {
+        @extend .rigid-input;
+
+        float: left;
+        @include box-sizing(border-box);
+
+        margin: .1em;
+
+        line-height: 1.636; // 18px line height for 11px font size
+        padding: .090em .272em; // 1px 3px for 11px font size
+
+        width: 100%; // Fill up span's space
+    }
+
+    input[type=text].invalid {
+        background: $invalid-input;
+        color: $medium-coal;
+    }
+
+}
+

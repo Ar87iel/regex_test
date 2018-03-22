@@ -1,0 +1,189 @@
+////////////////////////////////////////////////////////////
+// Main WebPT EMR App Partial
+////////////////////////////////////////////////////////////
+//
+// Defines SASS variables, mix-ins, and functions for re-use.
+//
+// To prevent redundancy, this file, parsed alone with SASS,
+// should give NO output.
+//
+// This means, do not add classes here - instead those
+// should go into common.scss.
+//
+// Also do not add /*..*/ comments, as they will be left in
+// via SASS, and will be duplicated over many, many files.
+//
+////////////////////////////////////////////////////////////
+
+
+////////////////////////////////////////////////////////////
+// Structural content covering the entire EMR App
+////////////////////////////////////////////////////////////
+
+    // Commonly used border radius setting
+    $emr-app-border-radius: 5px;
+
+    // Legacy Site Colors
+    $legacy-blue: #006699;
+    $legacy-light-blue: #CFEAF5;
+
+    // Input field colors
+    $legacy-cream: #F5F5F5;
+
+    // Input fields when invalid inputs are given
+    $invalid-input: #FFA8A8;
+
+    // Button style #1 > Button outline
+    $button-style-1-outline: #BBBBBB;
+
+
+////////////////////////////////////////////////////////////
+// Official colors
+////////////////////////////////////////////////////////////
+
+    $dark-blue: #146691;
+    $medium-blue: #449FD7;
+    $medium-blue-zebra-striped: lighten($medium-blue, 20%);
+    $light-blue: #7BC4E3;
+    $light-blue-zebra-stripe: lighten($light-blue, 20%);
+    $dark-green: #51812B;
+    $medium-green: #81AD31;
+    $light-green: #ADCE3B;
+    $dark-yellow: #B47113;
+    $medium-yellow: #DF970E;
+    $light-yellow: #F4C822;
+    $dark-red: #85071F;
+    $medium-red: #CE1C3C;
+    $light-red: #FB7473;
+    $dark-gray: #D4D4D4;
+    $medium-gray: #E9E9E9;
+    $light-gray: #FAFAFA;
+    $dark-coal: #333;
+    $medium-coal: #666;
+    $light-coal: #999;
+    $black: #000;
+    $white: #FFF;
+
+// Official color aliases for maximum backwards compatibility
+    $darkblue: $dark-blue;
+    $med-blue: $medium-blue; // Alias
+    $medblue: $medium-blue;
+    $zebramedblue: $medium-blue-zebra-striped;
+    $liteblue: $light-blue;
+    $zebraliteblue: $light-blue-zebra-stripe;
+    $darkgreen: $dark-green;
+    $medgreen: $medium-green;
+    $litegreen: $light-green;
+    $darkyellow: $dark-yellow;
+    $darkyelow: $darkyellow;
+    $medyellow: $medium-yellow;
+    $liteyellow: $light-yellow;
+    $darkred: $dark-red;
+    $medred: $medium-red;
+    $litered: $light-red;
+    $darkgray: $dark-gray;
+    $medgray: $medium-gray;
+    $litegray: $light-gray;
+    $darkcoal: $dark-coal;
+    $medcoal: $medium-coal;
+    $litecoal: $light-coal;
+
+
+////////////////////////////////////////////////////////////
+// Mix ins
+////////////////////////////////////////////////////////////
+
+    // Cross browser inline block
+    @mixin inline-block {
+        display: inline-block; zoom: 1; *display: inline;
+    }
+
+    // Cross browser box sizing + shim for IE7
+    // E.x. @include box-sizing(content-box)
+    @mixin box-sizing($box-model) {
+        -webkit-box-sizing: $box-model;
+        -moz-box-sizing: $box-model;
+        box-sizing: $box-model;
+        *behavior: url('js/vendor/boxsizing-ie.htc'); // Absolute path from HTML document, not CSS!
+    }
+
+    // Can @include clear-fix instead of using clear-after classes (but they're there if you want)
+    @mixin clear-fix {
+        *zoom: 1; // IE7
+        &:before, &:after { content: " "; display: table; }
+        &:after { clear: both; }
+    }
+
+    // Cross browser border radius
+    @mixin border-radius($radius: 5px) {
+        border-radius: $radius;
+        -webkit-border-radius: $radius;
+    }
+
+    // Cross browser box shadow
+    @mixin box-shadow($offset-x: 0, $offset-y: 0, $blur-radius: 0, $spread-radius: 0, $color: #000, $inset: '') {
+        -webkit-box-shadow: #{$inset} $offset-x $offset-y $blur-radius $spread-radius $color;
+        box-shadow: #{$inset} $offset-x $offset-y $blur-radius $spread-radius $color;
+    }
+
+    // Cross browser basic transition
+    // E.x. @include transition("background-color .35s, color .35s");
+    @mixin transition($rule) {
+        transition: #{$rule};
+        -webkit-transition: #{$rule};
+        -moz-transition: #{$rule};
+        -o-transition: #{$rule};
+    }
+
+    // This mixin provides cross-browser CSS-driven border-spacing capabilities on tables.
+    // Pass 'collapse' for collapsed cellspacing
+    // Pass 0 for separated but with 0 width cellspacing
+    // Pass anything else for separated with the given border-spacing
+    @mixin cell-spacing($cell-spacing: 5px) {
+        @if $cell-spacing == 'collapse' {
+            border-collapse: collapse;
+        } @else if $cell-spacing == 0 {
+            border-collapse: separate;
+            border-spacing: 0;
+            *border-collapse: collapse; // Needed for IE7
+
+            td {
+                *position: relative; // Needed for IE7
+            }
+        } @else {
+            border-collapse: separate;
+            border-spacing: $cell-spacing;
+            *border-collapse: expression('separate', cellSpacing = '#{$cell-spacing}'); // IE7
+        }
+    }
+
+    // This mixin provides cross-browser CSS-driven cell-padding capabilities on tables.
+    // This mixin simply applies standard padding to any children tds.
+    @mixin cell-padding($cell-padding) {
+        td {
+            padding: $cell-padding;
+        }
+    }
+
+
+////////////////////////////////////////////////////////////
+// Helper Functions
+////////////////////////////////////////////////////////////
+
+    // Takes a given desired pixel size and the current inherited pixel size
+    // and returns the appropriate ems to get to that desired pixel size.
+    //
+    // E.g. At 11px, getting to 12px would be 1.09em
+    // font-size: -wpt-px-to-em(12,11) would convert to font-size: 1.09em
+    @function -wpt-px-to-em($wanted, $inherited) {
+        @return #{( $wanted / $inherited ) + 'em'};
+    }
+
+    // Takes a given desired pixel size and the parent's current pixel size
+    // and returns the appropraite % to get to that desired pixel size.
+    //
+    // E.g. At 11px, getting to 12px would be 109%
+    // width: -wpt-px-to-pc(12,11) would convert to width: 109%;
+    @function -wpt-px-to-pc($wanted, $parent) {
+        @return #{(( $wanted / $parent ) * 100 ) + '%'};
+    }

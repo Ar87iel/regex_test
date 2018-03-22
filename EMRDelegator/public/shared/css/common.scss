@@ -1,0 +1,27 @@
+@import "partials/_wpt.scss";
+@import "_normalize.scss";
+
+body {
+    font-size: 68.75%; // 11 px base font size
+    line-height: 1.25;
+    // font-family: Verdana, Geneva, sans-serif; // Commented because normalize already sets this on html element
+    //                                           // but leaving for clarity/reference
+}
+
+// Auxiliary
+
+// Remove from flow
+.hidden { display: none !important; } // This is not encouragement to use !important!
+
+// Hide but maintain layout in flow
+.invisible { visibility: hidden !important; }  // This is not encouragement to use !important!
+
+
+// Modern "clearfix" - http://stackoverflow.com/a/1633170
+.cf:before,
+.cf:after {
+    content: " ";
+    display: table;
+}
+.cf:after { clear: both; }
+.cf { *zoom: 1; }

@@ -1,0 +1,91 @@
+
+// Basic Styles
+table.dataTable {
+
+    // For resizable columns with ellipses, we need fixed layout
+    table-layout: fixed;
+
+    // Need thead specificity to override basic starting style
+    thead {
+
+        th {
+            padding: 3px 6px 3px 6px;
+
+            &.ui-state-default {
+                border-right: 0; // jQUI sets a full border, which makes it overextend the table - this fixes that
+            }
+
+            &:hover {
+                background: url(/js/ExtJs/resources/images/default/grid/grid3-hrow-over.gif);
+                border: 1px solid #aaccf6;
+
+                &.ui-state-default {
+                    border-right: 0; // jQUI sets a full border, which makes it overextend the table - this fixes that
+                }
+            }
+        }
+    }
+
+    tr {
+        border-bottom: 1px solid #EDEDED;
+        background-color: white;
+    }
+
+    td {
+        padding: 3px 5px;
+    }
+
+    // Ellipsis if short
+    td, th, .DataTables_sort_wrapper {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    // Remove Zebra Striping
+    tr.odd { background-color: white; }
+
+
+    // KeyTable Styles
+
+    .focus {
+        background-color: #7BC4E3;
+    }
+
+    // RowGrouping Styles
+
+    .group-item-expander {
+        color: #777;
+        cursor: pointer;
+        border-bottom: 2px solid #AAA;
+        padding-top: 1em;
+        padding-bottom: 4px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    // Fee Schedule Styles (TH's only)
+    .feeschedule-column-type { width: 67%; }
+    .feeschedule-column-cpt-code { width: 15%; }
+    .feeschedule-column-amount { width: 18%; }
+
+    // Includes any TH's
+    .feeschedule-cell-amount {
+        text-align: right;
+    }
+
+    // Excludes any TH's
+    td.feeschedule-cell-amount {
+        cursor: pointer;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .in-cell-editor {
+    }
+
+    .in-cell-edit-input {
+    }
+}

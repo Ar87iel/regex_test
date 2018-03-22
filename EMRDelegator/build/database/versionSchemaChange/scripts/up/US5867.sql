@@ -1,0 +1,1 @@
+ALTER TABLE `version` ADD `isUpping` BOOLEAN NOT NULL DEFAULT false AFTER `script`;

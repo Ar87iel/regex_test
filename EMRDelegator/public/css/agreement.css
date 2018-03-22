@@ -1,0 +1,45 @@
+body {
+  background: url("../images/background/color-line.png") repeat-x scroll 0 0 #FFFFFF;
+  padding-top: 4px; }
+
+body {
+  font-size: 11px;
+  font-family: Verdana, Geneva, sans-serif; }
+
+#page-content {
+  max-width: 960px;
+  margin: 40px auto 0;
+  padding: 0 1em; }
+
+#agreement-container {
+  font-size: 1.090em;
+  padding-bottom: 30px; }
+  #agreement-container .preface {
+    margin-bottom: 20px; }
+  #agreement-container .agreement-text {
+    height: 500px;
+    overflow: scroll;
+    text-align: justify;
+    border: 2px solid #069;
+    padding: 8px; }
+  #agreement-container .agreement-panel {
+    margin-top: .5em;
+    overflow: hidden; }
+    #agreement-container .agreement-panel form {
+      margin-top: 20px; }
+  #agreement-container .version {
+    float: left;
+    margin: 0 0 4.67em; }
+  #agreement-container form {
+    text-align: right;
+    border-top: 2px solid #cccccc;
+    margin-right: 0px;
+    margin-left: 0px;
+    bottom: 0;
+    position: fixed;
+    max-width: 940px;
+    width: 100%;
+    background-color: #FFFFFF;
+    padding: 10px; }
+
+/*# sourceMappingURL=agreement.css.map */

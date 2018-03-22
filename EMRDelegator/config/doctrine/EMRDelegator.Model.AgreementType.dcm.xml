@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="EMRDelegator\Model\AgreementType" table="AgreementType">
+    <id name="agreementTypeId" type="integer" column="AgreementTypeId">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="typeKey" type="string" column="TypeKey" length="45" nullable="false"/>
+    <field name="description" type="string" column="Description" length="45" nullable="false"/>
+    <field name="typeOrder" type="integer" column="TypeOrder" nullable="false"/>
+    <field name="created" type="datetime" column="Created" nullable="false"/>
+    <field name="lastModified" type="datetime" column="LastModified" nullable="true"/>
+  </entity>
+</doctrine-mapping>

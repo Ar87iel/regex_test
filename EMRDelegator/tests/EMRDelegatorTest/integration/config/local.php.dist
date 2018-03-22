@@ -1,0 +1,47 @@
+<?php
+
+/***************
+*
+* EMRDelegator
+*
+****************/
+
+use Zend\Config\Config;
+use EMRCore\Zend\ServiceManager\Initializer\SqlConnector as SqlConnectorInitializer;
+
+// With a shared local config you can move many settings into a single file.
+$sharedConfig = new Config(require_once '/webpt/etc/local.shared.php'); // array();
+
+// Override shared settings in your slice local config (this file).
+return $sharedConfig->merge(new Config(array(
+
+    'tokens' => array(
+
+        // Delegator Cookies.
+        'CLUSTER_ASSIGNMENT_COOKIE_NAME' => 'CLUSTERDEV',
+        'CLUSTER_ASSIGNMENT_COOKIE_DOMAIN' => 'webpt.com',
+
+        // Slice (default) read-write connection.
+        'DB_WRITER_USERNAME' => 'root',
+        'DB_WRITER_SCHEMA' => 'test',
+
+        // Slice (default) read-only connection.
+        'DB_READER_USERNAME' => 'root',
+        'DB_READER_SCHEMA' => 'test',
+
+        // Multi-tenant ETL writer connection.
+        'DB_MULTI_TENANT_WRITER_USERNAME' => 'root',
+        'DB_MULTI_TENANT_WRITER_SCHEMA' => 'test',
+
+        // Auth ETL writer connection.
+        'DB_AUTH_WRITER_USERNAME' => 'root',
+        'DB_AUTH_WRITER_SCHEMA' => 'test',
+
+        // Display error settings.
+        'DISPLAY_ERRORS' => 'stdout', // Set to 'stdout' to see warnings and notices.
+        'DISPLAY_EXCEPTIONS' => true, // Set to true in development to see exceptions
+
+        // Logger settings.
+        'LOGGER_ROOT_LEVEL' => 'TRACE',
+    ),
+)))->toArray();

@@ -1,0 +1,16 @@
+// Include this partial to gain a blue horizontal bar
+
+@mixin section-header-bar {
+    background: url("../images/announcements/title.bg.png") no-repeat 0 0;
+
+    height: 30px;
+    line-height: 30px; // Non-unitless line height to keep text centered..okay as long as only fits on one line..
+    overflow: hidden; // ..no need for white-space as the height is set, we'll just hide after text exceeds width
+
+    margin: 0.67em 0;
+    padding-left: 1em;
+
+    font-weight: bold;
+    font-size: 1.16em;
+    color: #fff;
+}

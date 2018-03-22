@@ -1,0 +1,33 @@
+<?php
+
+$basePath = $this->basePath();
+
+$this->headLink()->appendStylesheet($this->basePath('/css/eviction_notifier.css'));
+
+?>
+
+<div id="evicition-notification-container">
+
+    <h1 class="section-bar">This username is already signed in!</h1>
+
+    <p>
+        A user can only be logged in from one machine at a time. Do you want to oust the other user and proceed?
+    </p>
+
+    <div class="eviction-option-container">
+
+        <button type="button"
+                onclick='window.location.href="<?=$basePath;?>/eviction/cancel";'
+                class="eviction-option cancel">
+            No (logout)!
+        </button>
+
+        <button type="button"
+                onclick='window.location.href="<?=$basePath;?>/eviction/evict";'
+                class="eviction-option ok">
+            Yes, oust them!
+        </button>
+
+    </div>
+
+</div>

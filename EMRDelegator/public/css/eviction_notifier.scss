@@ -1,0 +1,33 @@
+@import "partials/_colorLine.scss";
+@import "partials/layout/_layout.scss";
+@import "partials/_interceptor.scss";
+
+
+.section-bar {
+    @include section-header-bar;
+}
+
+#evicition-notification-container {
+
+    font-size: 1.090em; // 12px from 11px
+
+    p {
+        font-size: 1.090em;
+
+    }
+
+    .eviction-option-container {
+        float: right;
+    }
+
+    .eviction-option {
+        margin: 0 0.2em; // Give buttons some breathing room
+    }
+
+    .cancel {}
+
+    .ok {
+        font-weight: bold;
+    }
+
+}
