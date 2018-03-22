@@ -3,11 +3,11 @@
 //    files in directory
     $files = array();
 //    only methods type 1
-    $type1 = "/getMock\(\'(([^,]*,){1}[^,]*);/";
+    $type1 = "/getMock\(\'([a-zA-Z\\]+)\',([a-zZA-Z\s\(\)\']+)\;/";
 //    methods empty others type 2
     $type2 = "";
 //    methods not empty other type 3
-    $type3 = "";
+    $type3 = "/->getMock\(\'([^,]*,){4}[\w\s]*\)\);/";;
 
 
 //$regexStep1 = "/getMock\((\'[\w\\]+\'),([\w\s\(\)\']+)/";
@@ -30,7 +30,7 @@
 
     function evaluateType1($Match) {
         var_dump("damierrrrrrrrrr");
-        var_dump($Match);
+        var_dump($Match[0]);
         return "+++++++";
     }
 

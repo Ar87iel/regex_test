@@ -1,85 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="514b8480-9d8b-4d87-ae0a-2cec5241f86f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/FeatureFlip/FeatureFlipChainFactoryTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/FeatureFlip/FeatureFlipChainFactoryTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/FeatureFlip/LaunchDarklyFactoryTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/FeatureFlip/LaunchDarklyFactoryTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/FeatureFlip/NewFeatureValidatorFactoryTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/FeatureFlip/NewFeatureValidatorFactoryTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/FeatureFlip/UserProviderTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/FeatureFlip/UserProviderTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Pendo/PendoAnalyticsFactoryTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Pendo/PendoAnalyticsFactoryTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Pendo/PendoListenerFactoryTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Pendo/PendoListenerFactoryTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Pendo/PendoListenerTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Pendo/PendoListenerTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/Assets/Dao/AssetsTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/Assets/Dao/AssetsTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/BillingFeed/Dao/EsbTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/BillingFeed/Dao/EsbTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/BillingFeed/FacilityBillingFeeds/FacilityBillingFeedsProviderFactoryTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/BillingFeed/FacilityBillingFeeds/FacilityBillingFeedsProviderFactoryTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/BillingFeed/FacilityBillingFeeds/FacilityBillingFeedsProviderTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/BillingFeed/FacilityBillingFeeds/FacilityBillingFeedsProviderTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/BillingFeed/FacilityBillingFeeds/ModuleRequiredBillingFeedsProviderFactoryTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/BillingFeed/FacilityBillingFeeds/ModuleRequiredBillingFeedsProviderFactoryTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/BillingFeed/FacilityBillingFeeds/ModuleRequiredBillingFeedsProviderTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/BillingFeed/FacilityBillingFeeds/ModuleRequiredBillingFeedsProviderTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/Cluster/Dao/EsbTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/Cluster/Dao/EsbTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/Cluster/Marshaller/ClusterCollectionToArrayTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/Cluster/Marshaller/ClusterCollectionToArrayTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/Cluster/Marshaller/SuccessToSaveClusterResponseTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/Cluster/Marshaller/SuccessToSaveClusterResponseTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/Company/AccountType/ServiceTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/Company/AccountType/ServiceTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/Company/CompanyModuleGrant/CompanyModuleGrantServiceFactoryTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/Company/CompanyModuleGrant/CompanyModuleGrantServiceFactoryTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/Company/CompanyModuleGrant/CompanyModuleGrantServiceTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/Company/CompanyModuleGrant/CompanyModuleGrantServiceTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/Company/Dao/EsbTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/Company/Dao/EsbTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/Company/Marshaller/SaveCompanyRequestToArrayTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/Company/Marshaller/SaveCompanyRequestToArrayTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/Company/Marshaller/Search/StdClassToSearchCompanyTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/Company/Marshaller/Search/StdClassToSearchCompanyTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/Company/Marshaller/Search/StdClassToSearchFacilityTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/Company/Marshaller/Search/StdClassToSearchFacilityTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/Company/Marshaller/Search/SuccessToSearchCompaniesResponseTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/Company/Marshaller/Search/SuccessToSearchCompaniesResponseTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/Company/Marshaller/SuccessToSaveCompanyResponseTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/Company/Marshaller/SuccessToSaveCompanyResponseTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/CompanyMigration/CompanyMigrationEventTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/CompanyMigration/CompanyMigrationEventTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/CompanyMigration/CompanyMigrationTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/CompanyMigration/CompanyMigrationTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/CompanyMigration/Dao/EsbTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/CompanyMigration/Dao/EsbTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/Facility/Dao/EsbTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/Facility/Dao/EsbTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/Facility/FacilityWithIntegrationTokenFactoryTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/Facility/FacilityWithIntegrationTokenFactoryTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/Facility/FacilityWithIntegrationTokenTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/Facility/FacilityWithIntegrationTokenTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/Facility/Marshaller/SaveFacilityRequestToArrayTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/Facility/Marshaller/SaveFacilityRequestToArrayTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/Facility/Marshaller/SuccessToSaveFacilityResponseTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/Facility/Marshaller/SuccessToSaveFacilityResponseTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/Facility/Module/ModulesTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/Facility/Module/ModulesTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/FacilityLogo/Dao/EsbTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/FacilityLogo/Dao/EsbTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/FacilityLogo/Dao/LogoTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/FacilityLogo/Dao/LogoTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/FacilityLogo/FacilityLogoTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/FacilityLogo/FacilityLogoTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/FacilityLogo/Marshaller/SuccessToDeleteFacilityLogoResponseTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/FacilityLogo/Marshaller/SuccessToDeleteFacilityLogoResponseTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/GhostBrowse/Dao/GhostEsbTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/GhostBrowse/Dao/GhostEsbTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/GhostBrowse/Marshaller/Search/UsersByCompanyIdTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/GhostBrowse/Marshaller/Search/UsersByCompanyIdTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/GhostBrowse/Marshaller/StdClassToSearchGhostBrowseTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/GhostBrowse/Marshaller/StdClassToSearchGhostBrowseTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/GhostBrowse/Marshaller/SuccessToGhostBrowseResponseTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/GhostBrowse/Marshaller/SuccessToGhostBrowseResponseTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/GhostBrowse/Marshaller/UserPayloadToUserTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/GhostBrowse/Marshaller/UserPayloadToUserTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/GhostCheckIn/GhostCheckInFactoryTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/GhostCheckIn/GhostCheckInFactoryTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/GhostCheckIn/GhostCheckInTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/GhostCheckIn/GhostCheckInTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/Identity/Dao/EsbDaoTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/Identity/Dao/EsbDaoTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/Identity/IdentityServiceTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/Identity/IdentityServiceTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/Reminder/Dao/QuotaDaoEsbTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/Reminder/Dao/QuotaDaoEsbTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/Reminder/QuotaServiceTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/Reminder/QuotaServiceTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/Role/RoleTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/Role/RoleTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/Session/RegistryKeepAliveTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/Session/RegistryKeepAliveTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/Session/RegistryTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/Session/RegistryTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/UniqueEmail/Dao/EsbUniqueEmailTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/UniqueEmail/Dao/EsbUniqueEmailTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/UniqueUsername/Dao/EsbTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/UniqueUsername/Dao/EsbTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/User/Dao/AssetTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/User/Dao/AssetTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/User/Dao/EsbTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/User/Dao/EsbTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/User/Ghost/GhostAdvancedFactoryTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/User/Ghost/GhostAdvancedFactoryTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/User/Ghost/GhostAdvancedTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/User/Ghost/GhostAdvancedTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/User/Ghost/GhostTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/User/Ghost/GhostTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/User/Marshaller/SuccessToGetUserByIdFromAuthResponseTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/User/Marshaller/SuccessToGetUserByIdFromAuthResponseTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/User/Marshaller/SuccessToSaveUserResponseFromAuthTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/User/Marshaller/SuccessToSaveUserResponseFromAuthTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/User/Marshaller/SuccessToSaveUserResponseTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/User/Marshaller/SuccessToSaveUserResponseTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/User/PermissionFactoryTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/User/PermissionFactoryTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/User/PermissionTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/User/PermissionTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/User/TypeTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/User/TypeTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/User/UserResourcesTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/User/UserResourcesTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/User/UserRoleTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/User/UserRoleTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/User/UserTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/User/UserTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/User/Validator/ValidatorPermissionTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/User/Validator/ValidatorPermissionTest.php" />
-      <change beforePath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/ServiceManager/ServiceRegistryTest.php" afterPath="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/ServiceManager/ServiceRegistryTest.php" />
-    </list>
+    <list default="true" id="514b8480-9d8b-4d87-ae0a-2cec5241f86f" name="Default" comment="" />
     <list id="a3a542f4-a1e8-41f6-b0cc-df719df9500d" name="no commit" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/test.php" afterPath="$PROJECT_DIR$/test.php" />
       <change beforePath="$PROJECT_DIR$/test2.php" afterPath="$PROJECT_DIR$/test2.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <file path="$PROJECT_DIR$/test.php" ignored="false" />
     <file path="$PROJECT_DIR$/.idea/workspace.xml" ignored="false" />
     <file path="$PROJECT_DIR$/test2.php" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -93,21 +20,51 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="test2.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="test2.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test2.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-460">
-              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+            <state relative-caret-position="143">
+              <caret line="6" column="33" lean-forward="false" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UserTest.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/User/UserTest.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-754">
+              <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserRoleTest.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/User/Dao/UserRoleTest.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="23">
+              <caret line="46" column="11" lean-forward="false" selection-start-line="46" selection-start-column="11" selection-end-line="46" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1593">
+              <caret line="96" column="24" lean-forward="false" selection-start-line="96" selection-start-column="24" selection-end-line="96" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="12" column="23" lean-forward="true" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+            <state relative-caret-position="286">
+              <caret line="11" column="30" lean-forward="false" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -163,16 +120,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SuccessToGetListResponseTest.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/Cluster/Marshaller/SuccessToGetListResponseTest.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-207">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
@@ -196,8 +143,9 @@
         <option value="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/Cluster/Marshaller/SuccessToSaveClusterResponseTest.php" />
         <option value="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/BillingFeed/Dao/EsbTest.php" />
         <option value="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/FacilityLogo/Dao/EsbTest.php" />
-        <option value="$PROJECT_DIR$/test2.php" />
         <option value="$PROJECT_DIR$/test.php" />
+        <option value="$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/User/UserTest.php" />
+        <option value="$PROJECT_DIR$/test2.php" />
       </list>
     </option>
   </component>
@@ -394,11 +342,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8394000" />
+    <option name="totallyTimeSpent" value="9546000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1920" y="-109" width="1920" height="1057" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16613418" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -407,7 +354,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36215666" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36215666" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -473,14 +420,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="16" column="52" lean-forward="false" selection-start-line="16" selection-start-column="52" selection-end-line="16" selection-end-column="52" />
           <folding />
         </state>
       </provider>
@@ -637,18 +576,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test2.php">
+    <entry file="file://$PROJECT_DIR$/test.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-460">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        <state relative-caret-position="286">
+          <caret line="11" column="30" lean-forward="false" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.php">
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="12" column="23" lean-forward="true" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+        <state relative-caret-position="1593">
+          <caret line="96" column="24" lean-forward="false" selection-start-line="96" selection-start-column="24" selection-end-line="96" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/User/Dao/UserRoleTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="46" column="11" lean-forward="false" selection-start-line="46" selection-start-column="11" selection-end-line="46" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EMRDelegator/tests/EMRAdminTest/unit/tests/Service/User/UserTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-754">
+          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="6" column="33" lean-forward="false" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
           <folding />
         </state>
       </provider>
