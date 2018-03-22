@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/EMRDelegator/vendor/emr-delegator/emr-delegator/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/EMRDelegator/vendor/emr-delegator/emr-delegator/src/EMRDelegator/Service/Company/Marshaller" isTestSource="false" packagePrefix="EMRDelegator\Company\Marshaller\" />
+      <sourceFolder url="file://$MODULE_DIR$/EMRDelegator/module/Service/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/EMRDelegator/vendor/emr-delegator/emr-delegator/src/EMRDelegator/Service/Facility/Marshaller" isTestSource="false" packagePrefix="EMRDelegator\Facility\Marshaller\" />
+      <sourceFolder url="file://$MODULE_DIR$/EMRDelegator/module/Console/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/EMRDelegator/tests/EMRDelegatorTest/integration/lib" isTestSource="true" packagePrefix="EMRDelegatorTest\Integration\Lib\" />
+      <sourceFolder url="file://$MODULE_DIR$/EMRDelegator/vendor/emr-delegator/emr-delegator/src/EMRDelegator/Service/Cluster/Marshaller" isTestSource="false" packagePrefix="EMRDelegator\Cluster\Marshaller\" />
+      <sourceFolder url="file://$MODULE_DIR$/EMRDelegator/module/Application/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/EMRDelegator/module/Console/tests/ConsoleTest/unit/tests/Service/SelectAndInsert" isTestSource="true" packagePrefix="ConsoleTest\Unit\Service\SelectAndInsert\" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
