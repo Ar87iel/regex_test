@@ -54,7 +54,7 @@ class ValidatorPermissionTest extends PHPUnit_Framework_TestCase
         /** @var PrototypeFactory|PHPUnit_Framework_MockObject_MockObject $prototypeFactory */
         $prototypeFactory = $this->getMockBuilder(PrototypeFactory::class)
             ->disableOriginalConstructor()
-            ->createMock();
+            ->getMock();
 
         $prototypeFactory->expects($this->any())
             ->method('createAndInitialize')

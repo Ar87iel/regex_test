@@ -40,9 +40,9 @@ class CompanyModuleGrantServiceTest extends PHPUnit_Framework_TestCase
     {
         parent::setUp();
 
-        $this->companyModuleService = $this->createMock(CompanyModulesServiceInterface::class);
+        $this->companyModuleService = $this->getMock(CompanyModulesServiceInterface::class);
 
-        $this->sdkCompanyModuleGrantService = $this->createMock(SdkCompanyModuleGrantServiceInterface::class);
+        $this->sdkCompanyModuleGrantService = $this->getMock(SdkCompanyModuleGrantServiceInterface::class);
 
         $this->service = new CompanyModuleGrantService(
             $this->companyModuleService,
@@ -125,7 +125,7 @@ class CompanyModuleGrantServiceTest extends PHPUnit_Framework_TestCase
      */
     public function testGetCompanyModulesExpectingException()
     {
-        $logger = $this->createMock(LoggerInterface::class);
+        $logger = $this->getMock(LoggerInterface::class);
         $logger->expects($loggerSpy = static::atLeastOnce())->method('error');
 
         $this->service = new CompanyModuleGrantService(

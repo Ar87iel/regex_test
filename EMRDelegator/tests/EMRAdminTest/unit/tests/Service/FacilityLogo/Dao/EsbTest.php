@@ -64,7 +64,7 @@ class EsbTest extends PHPUnit_Framework_TestCase
         $this->esbFactory = $this->getMock('EMRCore\EsbFactory', array(), array(), '', false);
 
         // Create a mock ServiceLocator
-        $this->serviceLocator = $this->createMock('Zend\ServiceManager\ServiceLocatorInterface');
+        $this->serviceLocator = $this->getMock('Zend\ServiceManager\ServiceLocatorInterface');
     }
 
     public function testDeleteFacilityLogo()
@@ -77,7 +77,7 @@ class EsbTest extends PHPUnit_Framework_TestCase
         $this->dao->setServiceLocator($this->serviceLocator);
 
         //Create a mock PrototypeFactory and set the dependency.
-        $SuccessMarshaller = $this->createMock('EMRAdmin\Service\FacilityLogo\Marshaller\SuccessToDeleteFacilityLogoResponse');
+        $SuccessMarshaller = $this->getMock('EMRAdmin\Service\FacilityLogo\Marshaller\SuccessToDeleteFacilityLogoResponse');
         $SuccessMarshaller->expects($this->once())->method('marshall')
                 ->will($this->returnValue(array()));
 
@@ -87,7 +87,7 @@ class EsbTest extends PHPUnit_Framework_TestCase
         $route->setMethod('qwer');
 
         // Always use the fake route for our request.
-        $routes = $this->createMock('EMRCore\Config\Service\PrivateService\Esb\Routes');
+        $routes = $this->getMock('EMRCore\Config\Service\PrivateService\Esb\Routes');
 
         $routes->expects($this->once())
                 ->method('getRouteByName')
@@ -131,7 +131,7 @@ class EsbTest extends PHPUnit_Framework_TestCase
         $response->setContent($content);
 
         // Return the mock response.
-        $client = $this->createMock('Zend\Http\Client');
+        $client = $this->getMock('Zend\Http\Client');
         $client->expects($this->once())->method('send')
                 ->will($this->returnValue($response));
 
@@ -169,7 +169,7 @@ class EsbTest extends PHPUnit_Framework_TestCase
         $route->setMethod('qwer');
 
         // Create a fake routes for the request.
-        $routes = $this->createMock('EMRCore\Config\Service\PrivateService\Esb\Routes');
+        $routes = $this->getMock('EMRCore\Config\Service\PrivateService\Esb\Routes');
 
         $routes->expects($this->once())
                 ->method('getRouteByName')
@@ -213,7 +213,7 @@ class EsbTest extends PHPUnit_Framework_TestCase
 
         // Return the mock response.
         /** @var Client|PHPUnit_Framework_MockObject_MockObject $client */
-        $client = $this->createMock('Zend\Http\Client');
+        $client = $this->getMock('Zend\Http\Client');
         $client->expects($this->once())->method('send')
                 ->will($this->returnValue($response));
 

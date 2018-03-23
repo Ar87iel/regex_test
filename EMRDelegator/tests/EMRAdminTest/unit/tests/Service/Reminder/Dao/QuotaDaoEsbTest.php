@@ -40,7 +40,7 @@ class QuotaDaoEsbTest extends PHPUnit_Framework_TestCase
         $params = array('facilityId' => $facilityId);
         $payload = 'stuff';
 
-        $response = $this->createMock('EMRCore\Zend\module\Service\src\Response\Dto\Success');
+        $response = $this->getMock('EMRCore\Zend\module\Service\src\Response\Dto\Success');
         $response->expects($this->once())
             ->method('getPayload')
             ->will($this->returnValue($payload));
@@ -87,7 +87,7 @@ class QuotaDaoEsbTest extends PHPUnit_Framework_TestCase
         );
         $payload = 'stuff';
 
-        $quota = $this->createMock('EMRModel\Reminder\Quota');
+        $quota = $this->getMock('EMRModel\Reminder\Quota');
         $quota->expects($this->once())
             ->method('getFacilityId')
             ->will($this->returnValue($facilityId));
@@ -99,7 +99,7 @@ class QuotaDaoEsbTest extends PHPUnit_Framework_TestCase
             ->with('Y-m-d')
             ->will($this->returnValue($startDate));
 
-        $response = $this->createMock('EMRCore\Zend\module\Service\src\Response\Dto\Success');
+        $response = $this->getMock('EMRCore\Zend\module\Service\src\Response\Dto\Success');
         $response->expects($this->once())
             ->method('getPayload')
             ->will($this->returnValue($payload));

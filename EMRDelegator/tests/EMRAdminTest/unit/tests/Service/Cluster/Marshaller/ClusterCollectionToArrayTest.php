@@ -27,7 +27,7 @@ class ClusterCollectionToArrayTest extends PHPUnit_Framework_TestCase
     {
         $this->marshaller = new ClusterCollectionToArray;
 
-        $this->serviceLocator = $this->createMock('Zend\ServiceManager\ServiceLocatorInterface');
+        $this->serviceLocator = $this->getMock('Zend\ServiceManager\ServiceLocatorInterface');
 
         $this->marshaller->setServiceLocator($this->serviceLocator);
     }
@@ -47,7 +47,7 @@ class ClusterCollectionToArrayTest extends PHPUnit_Framework_TestCase
         $collection = new ClusterCollection;
         $collection->push($cluster);
 
-        $clusterMarshaller = $this->createMock('EMRAdmin\Service\Cluster\Marshaller\ClusterToArray');
+        $clusterMarshaller = $this->getMock('EMRAdmin\Service\Cluster\Marshaller\ClusterToArray');
 
         $clusterMarshaller->expects($this->once())->method('marshall')
                 ->with($this->equalTo($cluster))->will($this->returnValue($cluster));

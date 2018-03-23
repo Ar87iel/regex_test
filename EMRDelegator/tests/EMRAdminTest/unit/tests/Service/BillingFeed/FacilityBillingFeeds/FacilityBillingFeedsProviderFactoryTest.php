@@ -26,7 +26,7 @@ class FacilityBillingFeedsProviderFactoryTest extends \PHPUnit_Framework_TestCas
     {
         $this->serviceLocator->setService(
             'EMRAdmin\Service\BillingFeed\BillingFeed',
-            $this->createMock('\EMRAdmin\Service\BillingFeed\BillingFeedInterface')
+            $this->getMock('\EMRAdmin\Service\BillingFeed\BillingFeedInterface')
         );
         
         $actual = $this->sut->createService($this->serviceLocator);

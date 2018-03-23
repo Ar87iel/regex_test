@@ -93,7 +93,7 @@ class StdClassToSearchCompanyTest extends PHPUnit_Framework_TestCase
                 }));
 
         /** @var ServiceLocatorInterface|PHPUnit_Framework_MockObject_MockObject $serviceLocator */
-        $serviceLocator = $this->createMock('Zend\ServiceManager\ServiceLocatorInterface');
+        $serviceLocator = $this->getMock('Zend\ServiceManager\ServiceLocatorInterface');
         $this->marshaller->setServiceLocator($serviceLocator);
 
         $serviceLocator->expects($this->any())

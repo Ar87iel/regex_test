@@ -68,7 +68,7 @@ class SuccessToSaveUserResponseTest extends PHPUnit_Framework_TestCase
                     }
                 }));
 
-        $this->success = $this->createMock('EMRCore\Zend\module\Service\src\Response\Dto\Success');
+        $this->success = $this->getMock('EMRCore\Zend\module\Service\src\Response\Dto\Success');
 
 
         $this->marshall = new SuccessToSaveUserResponse();

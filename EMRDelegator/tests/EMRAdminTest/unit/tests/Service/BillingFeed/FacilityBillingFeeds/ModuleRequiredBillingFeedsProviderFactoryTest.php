@@ -26,12 +26,12 @@ class ModuleRequiredBillingFeedsProviderFactoryTest extends \PHPUnit_Framework_T
     {
         $this->serviceLocator->setService(
             'EMRAdmin\Service\Facility\Module\Modules',
-            $this->createMock('\EMRAdmin\Service\Facility\Module\ModulesInterface')
+            $this->getMock('\EMRAdmin\Service\Facility\Module\ModulesInterface')
         );
         
         $this->serviceLocator->setService(
             'EMRAdmin\Service\BillingFeed\BillingFeed',
-            $this->createMock('\EMRAdmin\Service\BillingFeed\BillingFeedInterface')
+            $this->getMock('\EMRAdmin\Service\BillingFeed\BillingFeedInterface')
         );
         
         $actual = $this->sut->createService($this->serviceLocator);

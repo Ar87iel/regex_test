@@ -44,7 +44,7 @@ class SuccessToGetUserByIdFromAuthResponseTest extends PHPUnit_Framework_TestCas
         $success = new Success;
         $success->setPayload($payload);
 
-        $serviceLocator = $this->createMock('Zend\ServiceManager\ServiceLocatorInterface');
+        $serviceLocator = $this->getMock('Zend\ServiceManager\ServiceLocatorInterface');
         $serviceLocator->expects($this->any())->method('get')
             ->will($this->returnValueMap(array(
                 array('Zend\Stdlib\Hydrator\Reflection', new Reflection),

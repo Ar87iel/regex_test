@@ -31,7 +31,7 @@ class UserProviderTest extends PHPUnit_Framework_TestCase
     {
         parent::setUp();
 
-        $this->session = $this->createMock(SessionInterface::class);
+        $this->session = $this->getMock(SessionInterface::class);
 
         $this->sut = new UserProvider($this->session);
     }

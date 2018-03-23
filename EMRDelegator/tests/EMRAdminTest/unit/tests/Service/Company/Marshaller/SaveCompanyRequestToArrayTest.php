@@ -29,9 +29,9 @@ class SaveCompanyRequestToArrayTest extends PHPUnit_Framework_TestCase
     {
         $this->request = new SaveCompanyRequest;
 
-        $this->address = $this->createMock('EMRCore\Contact\Address\Dto\Address');
-        $this->telephone = $this->createMock('EMRCore\Contact\Telephone\Dto\Telephone');
-        $this->email = $this->createMock('EMRCore\Contact\Email\Dto\Email');
+        $this->address = $this->getMock('EMRCore\Contact\Address\Dto\Address');
+        $this->telephone = $this->getMock('EMRCore\Contact\Telephone\Dto\Telephone');
+        $this->email = $this->getMock('EMRCore\Contact\Email\Dto\Email');
     }
 
     /**

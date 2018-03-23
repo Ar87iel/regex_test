@@ -41,7 +41,7 @@ class UsersByCompanyIdTest extends PHPUnit_Framework_TestCase
     {
         $this->marshaller = new UsersByCompanyId();
         $this->mockPrototypeFactory = $this->getMock('EMRCore\PrototypeFactory', array(), array(), '', false );
-        $this->mockServiceLocator = $this->createMock('Zend\ServiceManager\ServiceLocatorInterface');
+        $this->mockServiceLocator = $this->getMock('Zend\ServiceManager\ServiceLocatorInterface');
     
     }
     

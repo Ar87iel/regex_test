@@ -50,7 +50,7 @@ class ServiceRegistryTest extends \PHPUnit_Framework_TestCase
     {
         $this->serviceLocator->setService(
             'EMRAdmin\Service\Facility\Module\Modules',
-            $this->createMock('\EMRAdmin\Service\Facility\Module\ModulesInterface')
+            $this->getMock('\EMRAdmin\Service\Facility\Module\ModulesInterface')
         );
         
         $actual = ServiceRegistry::getFacilityModuleService($this->serviceLocator);
@@ -85,7 +85,7 @@ class ServiceRegistryTest extends \PHPUnit_Framework_TestCase
     {
         $this->serviceLocator->setService(
             'EMRAdmin\Service\BillingFeed\BillingFeed',
-            $this->createMock('\EMRAdmin\Service\BillingFeed\BillingFeedInterface')
+            $this->getMock('\EMRAdmin\Service\BillingFeed\BillingFeedInterface')
         );
         
         $actual = ServiceRegistry::getBillingFeedService($this->serviceLocator);

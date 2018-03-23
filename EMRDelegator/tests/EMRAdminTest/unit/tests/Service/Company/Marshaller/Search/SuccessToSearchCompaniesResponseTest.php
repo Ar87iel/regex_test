@@ -79,14 +79,14 @@ class SuccessToSearchCompaniesResponseTest extends PHPUnit_Framework_TestCase
         $success = new Success;
         $success->setPayload($item);
 
-        $companyMarshaller = $this->createMock('EMRAdmin\Service\Company\Marshaller\Search\StdClassToSearchCompany');
+        $companyMarshaller = $this->getMock('EMRAdmin\Service\Company\Marshaller\Search\StdClassToSearchCompany');
         $companyMarshaller->expects($this->once())
             ->method('marshall')
             ->withAnyParameters()
             ->will($this->returnValue(new SearchCompany));
 
         /** @var ServiceLocatorInterface|PHPUnit_Framework_MockObject_MockObject $serviceLocator */
-        $serviceLocator = $this->createMock('Zend\ServiceManager\ServiceLocatorInterface');
+        $serviceLocator = $this->getMock('Zend\ServiceManager\ServiceLocatorInterface');
         $this->marshaller->setServiceLocator($serviceLocator);
 
         $serviceLocator->expects($this->any())

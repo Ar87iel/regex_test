@@ -44,8 +44,8 @@ class GhostTest extends PHPUnit_Framework_TestCase {
 
     function setUp()
     {
-        $this->applicationSession = $this->createMock('EMRCore\Session\SessionInterface');
-        $this->serviceLocator = $this->createMock('Zend\ServiceManager\ServiceLocatorInterface');
+        $this->applicationSession = $this->getMock('EMRCore\Session\SessionInterface');
+        $this->serviceLocator = $this->getMock('Zend\ServiceManager\ServiceLocatorInterface');
 
         /** @var Ghost ghost */
         $this->ghost = $this->getMock('EMRAdmin\Service\User\Ghost\Ghost', array('getGhostLink','getGhostDto'));
@@ -86,7 +86,7 @@ class GhostTest extends PHPUnit_Framework_TestCase {
 
         $ghostURL = $baseURL . "/authorization/?ghostId=".$ghostId."&facilityId=".$facilityId."&wpt_sso_token=".$ssoToken;
 
-        $ghostDto = $this->createMock('EMRAdmin\Service\User\Ghost\Dto\Ghost');
+        $ghostDto = $this->getMock('EMRAdmin\Service\User\Ghost\Dto\Ghost');
 
         $this->ghost->expects($this->once())
             ->method('getGhostLink')

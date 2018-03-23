@@ -45,7 +45,7 @@ class RegistryTest extends PHPUnit_Framework_TestCase
         $sessionRegistryModel->setSsoToken($ssoToken);
         $sessionRegistryModel->setSessionId($sessionId);
 
-        $registryDaoMock = $this->createMock('\EMRAdmin\Service\Session\Dao\Registry');
+        $registryDaoMock = $this->getMock('\EMRAdmin\Service\Session\Dao\Registry');
 
         $this->registryService->setRegistryDao($registryDaoMock);
 
@@ -89,7 +89,7 @@ class RegistryTest extends PHPUnit_Framework_TestCase
         $sessionRegistryModel->setIdentityId($identityId);
 
 
-        $registryDaoMock = $this->createMock('\EMRAdmin\Service\Session\Dao\Registry');
+        $registryDaoMock = $this->getMock('\EMRAdmin\Service\Session\Dao\Registry');
 
         $this->registryService->setRegistryDao($registryDaoMock);
         $registryDaoMock->expects($this->once())
@@ -111,7 +111,7 @@ class RegistryTest extends PHPUnit_Framework_TestCase
         $sessionRegistryModel->setSsoToken($ssoToken);
 
 
-        $registryDaoMock = $this->createMock('\EMRAdmin\Service\Session\Dao\Registry');
+        $registryDaoMock = $this->getMock('\EMRAdmin\Service\Session\Dao\Registry');
 
         $this->registryService->setRegistryDao($registryDaoMock);
         $registryDaoMock->expects($this->once())
@@ -133,7 +133,7 @@ class RegistryTest extends PHPUnit_Framework_TestCase
 
         $ssoToken = 'thisbethetoken';
 
-        $registryDaoMock = $this->createMock('\EMRAdmin\Service\Session\Dao\Registry');
+        $registryDaoMock = $this->getMock('\EMRAdmin\Service\Session\Dao\Registry');
 
         $this->registryService->setRegistryDao($registryDaoMock);
         $registryDaoMock->expects($this->once())
@@ -152,7 +152,7 @@ class RegistryTest extends PHPUnit_Framework_TestCase
 
         $identityId = '123';
 
-        $registryDaoMock = $this->createMock('\EMRAdmin\Service\Session\Dao\Registry');
+        $registryDaoMock = $this->getMock('\EMRAdmin\Service\Session\Dao\Registry');
 
         $this->registryService->setRegistryDao($registryDaoMock);
         $registryDaoMock->expects($this->once())
@@ -171,7 +171,7 @@ class RegistryTest extends PHPUnit_Framework_TestCase
         $sessionRegistryModel->setSsoToken($ssoToken);
 
 
-        $registryDaoMock = $this->createMock('\EMRAdmin\Service\Session\Dao\Registry');
+        $registryDaoMock = $this->getMock('\EMRAdmin\Service\Session\Dao\Registry');
 
         $this->registryService->setRegistryDao($registryDaoMock);
         $registryDaoMock->expects($this->once())
@@ -195,7 +195,7 @@ class RegistryTest extends PHPUnit_Framework_TestCase
         $sessionRegistryModel = new SessionRegistryModel();
         $sessionRegistryModel->setIdentityId($identityId);
 
-        $registryDaoMock = $this->createMock('\EMRAdmin\Service\Session\Dao\Registry');
+        $registryDaoMock = $this->getMock('\EMRAdmin\Service\Session\Dao\Registry');
 
         $this->registryService->setRegistryDao($registryDaoMock);
         $registryDaoMock->expects($this->once())
@@ -226,7 +226,7 @@ class RegistryTest extends PHPUnit_Framework_TestCase
         $sessionRegistryModel->setSsoToken($ssoToken);
         $sessionRegistryModel->setSessionId($sessionId);
 
-        $registryDaoMock = $this->createMock('\EMRAdmin\Service\Session\Dao\Registry');
+        $registryDaoMock = $this->getMock('\EMRAdmin\Service\Session\Dao\Registry');
 
         $pdoException = new \PDOException('test', 23000);
 
@@ -266,7 +266,7 @@ class RegistryTest extends PHPUnit_Framework_TestCase
         $sessionRegistryModel->setSsoToken($ssoToken);
         $sessionRegistryModel->setSessionId($sessionId);
 
-        $registryDaoMock = $this->createMock('\EMRAdmin\Service\Session\Dao\Registry');
+        $registryDaoMock = $this->getMock('\EMRAdmin\Service\Session\Dao\Registry');
 
         $pdoException = new \PDOException('test', 1);
 
@@ -300,7 +300,7 @@ class RegistryTest extends PHPUnit_Framework_TestCase
         $sessionRegistryModel->setSsoToken($ssoToken);
         $sessionRegistryModel->setSessionId($sessionId);
 
-        $registryDaoMock = $this->createMock('\EMRAdmin\Service\Session\Dao\Registry');
+        $registryDaoMock = $this->getMock('\EMRAdmin\Service\Session\Dao\Registry');
 
         $pdoException = new \PDOException('test', 23000);
 
@@ -340,7 +340,7 @@ class RegistryTest extends PHPUnit_Framework_TestCase
         $sessionRegistryModel->setSsoToken($ssoToken);
         $sessionRegistryModel->setSessionId($sessionId);
 
-        $registryDaoMock = $this->createMock('\EMRAdmin\Service\Session\Dao\Registry');
+        $registryDaoMock = $this->getMock('\EMRAdmin\Service\Session\Dao\Registry');
 
         $pdoException = new \PDOException('test', 1);
 

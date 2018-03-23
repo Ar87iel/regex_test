@@ -25,9 +25,9 @@ class FacilityLogoTest extends PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->fileSystemDao = $this->createMock('EMRAdmin\Service\FacilityLogo\Dao\Logo');
+        $this->fileSystemDao = $this->getMock('EMRAdmin\Service\FacilityLogo\Dao\Logo');
 
-        $this->esbDao = $this->createMock('EMRAdmin\Service\FacilityLogo\Dao\Esb');
+        $this->esbDao = $this->getMock('EMRAdmin\Service\FacilityLogo\Dao\Esb');
 
         $this->service = new FacilityLogo;
         $this->service->setEsbDao($this->esbDao);

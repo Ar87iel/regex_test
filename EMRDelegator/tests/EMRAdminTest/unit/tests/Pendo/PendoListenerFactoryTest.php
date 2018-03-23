@@ -26,7 +26,7 @@ class PendoListenerFactoryTest extends PHPUnit_Framework_TestCase
     public function testCreateService()
     {
         /** @var PendoAnalyticsInterface | PHPUnit_Framework_MockObject_MockObject $pendo */
-        $pendo = $this->createMock('\WebPT\Pendo\PendoAnalyticsInterface');
+        $pendo = $this->getMock('\WebPT\Pendo\PendoAnalyticsInterface');
 
         $sm = new ServiceManager();
         $sm->setService('WebPT\Pendo\PendoAnalyticsInterface', $pendo);

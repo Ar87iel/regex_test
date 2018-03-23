@@ -31,8 +31,8 @@ class GhostAdvancedTest extends PHPUnit_Framework_TestCase {
 
     function setUp()
     {
-        $this->applicationSessionMock = $this->createMock('EMRCore\Session\SessionInterface');
-        $this->serviceLocatorMock = $this->createMock('Zend\ServiceManager\ServiceLocatorInterface');
+        $this->applicationSessionMock = $this->getMock('EMRCore\Session\SessionInterface');
+        $this->serviceLocatorMock = $this->getMock('Zend\ServiceManager\ServiceLocatorInterface');
 
         /** @var Ghost ghost */
         $this->ghost = new GhostAdvanced();

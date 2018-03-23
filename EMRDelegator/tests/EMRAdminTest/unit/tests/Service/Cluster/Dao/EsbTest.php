@@ -53,7 +53,7 @@ class EsbTest extends PHPUnit_Framework_TestCase
     {
         $this->singletonTestCaseHelper = new SingletonTestCaseHelper($this);
 
-        $this->serviceLocator = $this->createMock('Zend\ServiceManager\ServiceLocatorInterface');
+        $this->serviceLocator = $this->getMock('Zend\ServiceManager\ServiceLocatorInterface');
 
         $this->esbFactory = $this->getMock('EMRCore\EsbFactory', array('getClient'), array(), '', false);
 
@@ -93,14 +93,14 @@ class EsbTest extends PHPUnit_Framework_TestCase
         $parser = null;
 
         // Mock the routes config to return our fake route.
-        $routesService = $this->createMock('EMRCore\Config\Service\PrivateService\Esb\Routes');
+        $routesService = $this->getMock('EMRCore\Config\Service\PrivateService\Esb\Routes');
         $routesService->expects($this->once())
             ->method('getRouteByName')
             ->with($this->anything())
             ->will($this->returnValue($route));
 
         // Mock the dto marshaller so that this test does not blow up when marshall is called.
-        $dtoMarshaller = $this->createMock('EMRAdmin\Service\Cluster\Marshaller\SuccessToGetClusterResponse');
+        $dtoMarshaller = $this->getMock('EMRAdmin\Service\Cluster\Marshaller\SuccessToGetClusterResponse');
         $dtoMarshaller->expects($this->once())
             ->method('marshall')
             ->with($this->anything())
@@ -130,7 +130,7 @@ class EsbTest extends PHPUnit_Framework_TestCase
                 }));
 
         // Mock the client wrapper and ensure that execute is called. This is how the ESB request is sent.
-        $clientWrapper = $this->createMock('EMRCore\Zend\Http\ClientWrapper');
+        $clientWrapper = $this->getMock('EMRCore\Zend\Http\ClientWrapper');
         $clientWrapper->expects($this->once())
             ->method('setResponseParser')
             ->with($this->equalTo($parser));
@@ -165,14 +165,14 @@ class EsbTest extends PHPUnit_Framework_TestCase
         ));
 
         // Mock the routes config to return our fake route.
-        $routesService = $this->createMock('EMRCore\Config\Service\PrivateService\Esb\Routes');
+        $routesService = $this->getMock('EMRCore\Config\Service\PrivateService\Esb\Routes');
         $routesService->expects($this->once())
             ->method('getRouteByName')
             ->with($this->anything())
             ->will($this->returnValue($route));
 
         // Mock the dto marshaller so that this test does not blow up when marshall is called.
-        $dtoMarshaller = $this->createMock('EMRAdmin\Service\Cluster\Marshaller\SuccessToGetListResponse');
+        $dtoMarshaller = $this->getMock('EMRAdmin\Service\Cluster\Marshaller\SuccessToGetListResponse');
         $dtoMarshaller->expects($this->once())
             ->method('marshall')
             ->with($this->anything())
@@ -207,7 +207,7 @@ class EsbTest extends PHPUnit_Framework_TestCase
                 }));
 
         // Mock the client wrapper and ensure that execute is called. This is how the ESB request is sent.
-        $clientWrapper = $this->createMock('EMRCore\Zend\Http\ClientWrapper');
+        $clientWrapper = $this->getMock('EMRCore\Zend\Http\ClientWrapper');
         $clientWrapper->expects($this->once())
             ->method('setResponseParser')
             ->with($this->equalTo($parser));
@@ -245,21 +245,21 @@ class EsbTest extends PHPUnit_Framework_TestCase
         $saveClusterRequest = new Cluster;
 
         // Mock the routes config to return our fake route.
-        $routesService = $this->createMock('EMRCore\Config\Service\PrivateService\Esb\Routes');
+        $routesService = $this->getMock('EMRCore\Config\Service\PrivateService\Esb\Routes');
         $routesService->expects($this->once())
             ->method('getRouteByName')
             ->with($this->anything())
             ->will($this->returnValue($route));
 
         // Mock the dto marshaller so that this test does not blow up when marshall is called.
-        $dtoMarshaller = $this->createMock('EMRAdmin\Service\Cluster\Marshaller\SaveClusterRequestToArray');
+        $dtoMarshaller = $this->getMock('EMRAdmin\Service\Cluster\Marshaller\SaveClusterRequestToArray');
         $dtoMarshaller->expects($this->once())
             ->method('marshall')
             ->with($this->anything())
             ->will($this->returnValue(array()));
 
         // Mock the dto marshaller so that this test does not blow up when marshall is called.
-        $successResponse = $this->createMock('EMRAdmin\Service\Cluster\Marshaller\SuccessToSaveClusterResponse');
+        $successResponse = $this->getMock('EMRAdmin\Service\Cluster\Marshaller\SuccessToSaveClusterResponse');
         $successResponse->expects($this->once())
             ->method('marshall')
             ->with($this->anything())
@@ -299,7 +299,7 @@ class EsbTest extends PHPUnit_Framework_TestCase
                 }));
 
         // Mock the client wrapper and ensure that execute is called. This is how the ESB request is sent.
-        $clientWrapper = $this->createMock('EMRCore\Zend\Http\ClientWrapper');
+        $clientWrapper = $this->getMock('EMRCore\Zend\Http\ClientWrapper');
         $clientWrapper->expects($this->once())
             ->method('setResponseParser')
             ->with($this->equalTo($parser));

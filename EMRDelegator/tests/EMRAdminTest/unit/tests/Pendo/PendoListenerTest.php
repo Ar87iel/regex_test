@@ -31,7 +31,7 @@ class PendoListenerTest extends PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->pendo = $this->createMock('\WebPT\Pendo\PendoAnalyticsInterface');
+        $this->pendo = $this->getMock('\WebPT\Pendo\PendoAnalyticsInterface');
         $this->sut = new PendoListener($this->pendo);
     }
 
@@ -44,7 +44,7 @@ class PendoListenerTest extends PHPUnit_Framework_TestCase
         $headScript = $this->getMock('\Zend\View\Helper\HeadScript', array(), array(), '', false);
 
         /** @var PhpRenderer | PHPUnit_Framework_MockObject_MockObject $renderer */
-        $renderer = $this->createMock('\Zend\View\Renderer\PhpRenderer');
+        $renderer = $this->getMock('\Zend\View\Renderer\PhpRenderer');
         $renderer->expects(self::any())->method('__call')
             ->with('headScript')
             ->willReturn($headScript);
@@ -54,7 +54,7 @@ class PendoListenerTest extends PHPUnit_Framework_TestCase
         );
 
         /** @var ModelInterface | PHPUnit_Framework_MockObject_MockObject $model */
-        $model = $this->createMock('\Zend\View\Model\ModelInterface');
+        $model = $this->getMock('\Zend\View\Model\ModelInterface');
         $model->expects(self::any())->method('getOptions')
             ->will(self::returnValue($options));
 
@@ -91,7 +91,7 @@ class PendoListenerTest extends PHPUnit_Framework_TestCase
     public function testAttachAttachesToExpectedEventWithExpectedCallback()
     {
         /** @var EventManagerInterface | PHPUnit_Framework_MockObject_MockObject $em */
-        $em = $this->createMock('\Zend\EventManager\EventManagerInterface');
+        $em = $this->getMock('\Zend\EventManager\EventManagerInterface');
         $em->expects(self::once())->method('attach')
             ->with(ViewEvent::EVENT_RENDERER_POST, array($this->sut, '__invoke'));
 
@@ -104,7 +104,7 @@ class PendoListenerTest extends PHPUnit_Framework_TestCase
         $cbHandler = $this->getMock('\Zend\Stdlib\CallbackHandler', array(), array(), '', false);
 
         /** @var EventManagerInterface | PHPUnit_Framework_MockObject_MockObject $em */
-        $em = $this->createMock('\Zend\EventManager\EventManagerInterface');
+        $em = $this->getMock('\Zend\EventManager\EventManagerInterface');
         $em->expects(self::once())->method('attach')
            ->with(ViewEvent::EVENT_RENDERER_POST, array($this->sut, '__invoke'))
             ->willReturn($cbHandler);
@@ -126,19 +126,19 @@ class PendoListenerTest extends PHPUnit_Framework_TestCase
         $this->pendo->expects(self::never())->method('getJavaScript');
 
         /** @var PhpRenderer | PHPUnit_Framework_MockObject_MockObject $renderer */
-        $renderer = $this->createMock('\Zend\View\Renderer\PhpRenderer');
+        $renderer = $this->getMock('\Zend\View\Renderer\PhpRenderer');
 
         $options = array(
             'has_parent' => true,
         );
 
         /** @var ModelInterface | PHPUnit_Framework_MockObject_MockObject $model */
-        $model = $this->createMock('\Zend\View\Model\ModelInterface');
+        $model = $this->getMock('\Zend\View\Model\ModelInterface');
         $model->expects(self::any())->method('getOptions')
               ->will(self::returnValue($options));
 
         /** @var EventInterface | PHPUnit_Framework_MockObject_MockObject $event */
-        $event = $this->createMock('\Zend\EventManager\EventInterface');
+        $event = $this->getMock('\Zend\EventManager\EventInterface');
         $event->expects(self::any())->method('getRenderer')
               ->will(self::returnValue($renderer));
         $event->expects(self::any())->method('getModel')
@@ -158,14 +158,14 @@ class PendoListenerTest extends PHPUnit_Framework_TestCase
         $this->pendo->expects(self::never())->method('getJavaScript');
 
         /** @var PhpRenderer | PHPUnit_Framework_MockObject_MockObject $renderer */
-        $renderer = $this->createMock('\Zend\View\Renderer\PhpRenderer');
+        $renderer = $this->getMock('\Zend\View\Renderer\PhpRenderer');
 
         $options = array(
             'has_parent' => true,
         );
 
         /** @var ModelInterface | PHPUnit_Framework_MockObject_MockObject $model */
-        $model = $this->createMock('\Zend\View\Model\ModelInterface');
+        $model = $this->getMock('\Zend\View\Model\ModelInterface');
         $model->expects(self::any())->method('getOptions')
               ->will(self::returnValue($options));
 
@@ -190,7 +190,7 @@ class PendoListenerTest extends PHPUnit_Framework_TestCase
         $this->pendo->expects(self::never())->method('getJavaScript');
 
         /** @var PhpRenderer | PHPUnit_Framework_MockObject_MockObject $renderer */
-        $renderer = $this->createMock('\Zend\View\Renderer\PhpRenderer');
+        $renderer = $this->getMock('\Zend\View\Renderer\PhpRenderer');
 
         $model = new \stdClass();
         $model->getOptions = function(){
@@ -220,14 +220,14 @@ class PendoListenerTest extends PHPUnit_Framework_TestCase
         $this->pendo->expects(self::never())->method('getJavaScript');
 
         /** @var RendererInterface | PHPUnit_Framework_MockObject_MockObject $renderer */
-        $renderer = $this->createMock('\Zend\View\Renderer\RendererInterface');
+        $renderer = $this->getMock('\Zend\View\Renderer\RendererInterface');
 
         $options = array(
             'has_parent' => false,
         );
 
         /** @var ModelInterface | PHPUnit_Framework_MockObject_MockObject $model */
-        $model = $this->createMock('\Zend\View\Model\ModelInterface');
+        $model = $this->getMock('\Zend\View\Model\ModelInterface');
         $model->expects(self::any())->method('getOptions')
               ->will(self::returnValue($options));
 

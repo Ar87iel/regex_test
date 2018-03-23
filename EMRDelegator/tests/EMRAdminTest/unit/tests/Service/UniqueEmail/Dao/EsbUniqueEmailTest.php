@@ -53,7 +53,7 @@ class EsbUniqueEmailTest extends PHPUnit_Framework_TestCase
 
         $this->singletonTestCaseHelper->mockSingleton($this->mockEsbFactory, $esbFactoryClass);
 
-        $this->mockServiceLocator = $this->createMock('Zend\ServiceManager\ServiceLocatorInterface');
+        $this->mockServiceLocator = $this->getMock('Zend\ServiceManager\ServiceLocatorInterface');
 
         $this->dao = new Esb();
         $this->dao->setServiceLocator($this->mockServiceLocator);
@@ -74,7 +74,7 @@ class EsbUniqueEmailTest extends PHPUnit_Framework_TestCase
         $route->setMethod('qwer');
 
         // Always use the fake route for our request.
-        $routes = $this->createMock('EMRCore\Config\Service\PrivateService\Esb\Routes');
+        $routes = $this->getMock('EMRCore\Config\Service\PrivateService\Esb\Routes');
 
         $routes->expects($this->once())
             ->method('getRouteByName')
@@ -146,7 +146,7 @@ class EsbUniqueEmailTest extends PHPUnit_Framework_TestCase
         $response->setContent($content);
              
         // Return the mock response.
-        $client = $this->createMock('Zend\Http\Client');
+        $client = $this->getMock('Zend\Http\Client');
         $client->expects($this->once())->method('send')
                 ->will($this->returnValue($response));
         

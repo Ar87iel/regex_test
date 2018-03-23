@@ -61,11 +61,11 @@ class GhostCheckInTest extends PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-        $this->guzzleMock            = self::getMockBuilder(\GuzzleHttp\Client::class)->disableOriginalConstructor()->createMock();
-        $this->loggerMock            = self::getMockBuilder(\Psr\Log\LoggerInterface::class)->disableOriginalConstructor()->createMock();
-        $this->uriMock               = self::getMockBuilder(Uri::class)->disableOriginalConstructor()->createMock();
-        $this->requestExceptionMock  = self::getMockBuilder(RequestException::class)->disableOriginalConstructor()->createMock();
-        $this->responseInterfaceMock = self::getMockBuilder(ResponseInterface::class)->disableOriginalConstructor()->createMock();
+        $this->guzzleMock            = self::getMockBuilder(\GuzzleHttp\Client::class)->disableOriginalConstructor()->getMock();
+        $this->loggerMock            = self::getMockBuilder(\Psr\Log\LoggerInterface::class)->disableOriginalConstructor()->getMock();
+        $this->uriMock               = self::getMockBuilder(Uri::class)->disableOriginalConstructor()->getMock();
+        $this->requestExceptionMock  = self::getMockBuilder(RequestException::class)->disableOriginalConstructor()->getMock();
+        $this->responseInterfaceMock = self::getMockBuilder(ResponseInterface::class)->disableOriginalConstructor()->getMock();
     }
 
     public function tearDown()

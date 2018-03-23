@@ -17,10 +17,10 @@ class GhostCheckInFactoryTest extends PHPUnit_Framework_TestCase
     public function setUp() {
         $this->serviceLocatorInterfaceMock = self::getMockBuilder(ServiceLocatorInterface::class)
                                                     ->disableOriginalConstructor()
-                                                    ->createMock();
+                                                    ->getMock();
         $this->loggerInterfaceMock = self::getMockBuilder(LoggerInterface::class)
                                                     ->disableOriginalConstructor()
-                                                    ->createMock();
+                                                    ->getMock();
     }
 
     public function testCreateService()

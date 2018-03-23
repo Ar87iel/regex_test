@@ -138,7 +138,7 @@ class RegistryKeepAliveTest extends PHPUnit_Framework_TestCase
      */
     public function testGarbageCollect()
     {
-        $registryDao = $this->createMock('EMRAdmin\Service\Session\Dao\Registry');
+        $registryDao = $this->getMock('EMRAdmin\Service\Session\Dao\Registry');
         
         $registryDao->expects($this->once())->method('deleteBySessionRegistryId');
         
@@ -169,7 +169,7 @@ class RegistryKeepAliveTest extends PHPUnit_Framework_TestCase
      */
     public function testKeepAliveEmptyResultset()
     {
-        $mockedServiceLocator = $this->createMock('Zend\ServiceManager\ServiceLocatorInterface');
+        $mockedServiceLocator = $this->getMock('Zend\ServiceManager\ServiceLocatorInterface');
         
         $mockedServiceLocator->expects($this->any())->method('get')->will($this->returnCallback(function($name)
                 {
@@ -188,7 +188,7 @@ class RegistryKeepAliveTest extends PHPUnit_Framework_TestCase
         
         
         
-        $registryDao = $this->createMock('EMRAdmin\Service\Session\Dao\Registry');
+        $registryDao = $this->getMock('EMRAdmin\Service\Session\Dao\Registry');
         
         $registryDao->expects($this->once())->method('getAll')->will($this->returnValue(null));
         
@@ -209,7 +209,7 @@ class RegistryKeepAliveTest extends PHPUnit_Framework_TestCase
      */
     public function testKeepAliveWithoutSessionRegistry()
     {
-        $mockedServiceLocator = $this->createMock('Zend\ServiceManager\ServiceLocatorInterface');
+        $mockedServiceLocator = $this->getMock('Zend\ServiceManager\ServiceLocatorInterface');
         
         $mockedServiceLocator->expects($this->any())->method('get')->will($this->returnCallback(function($name)
                 {
@@ -226,14 +226,14 @@ class RegistryKeepAliveTest extends PHPUnit_Framework_TestCase
                 }
                 ));
         
-        $model = $this->createMock('EMRAdmin\Model\SessionRegistry');
+        $model = $this->getMock('EMRAdmin\Model\SessionRegistry');
         
         $model->setIdentityId(1);
         $model->setSessionId(1);
         $model->setSessionRegistryId(1);
         $model->setSsoToken(1);
         
-        $registryDao = $this->createMock('EMRAdmin\Service\Session\Dao\Registry');
+        $registryDao = $this->getMock('EMRAdmin\Service\Session\Dao\Registry');
         
         $registryDao->expects($this->once())->method('getAll')->will($this->returnValue(array($model)));
         
@@ -269,7 +269,7 @@ class RegistryKeepAliveTest extends PHPUnit_Framework_TestCase
      */
     public function testKeepAliveWithRegistryTimedOut()
     {
-        $mockedServiceLocator = $this->createMock('Zend\ServiceManager\ServiceLocatorInterface');
+        $mockedServiceLocator = $this->getMock('Zend\ServiceManager\ServiceLocatorInterface');
         
         $mockedServiceLocator->expects($this->any())->method('get')->will($this->returnCallback(function($name)
                 {
@@ -286,14 +286,14 @@ class RegistryKeepAliveTest extends PHPUnit_Framework_TestCase
                 }
                 ));
         
-        $model = $this->createMock('EMRAdmin\Model\SessionRegistry');
+        $model = $this->getMock('EMRAdmin\Model\SessionRegistry');
         
         $model->setIdentityId(1);
         $model->setSessionId(1);
         $model->setSessionRegistryId(1);
         $model->setSsoToken(1);
         
-        $registryDao = $this->createMock('EMRAdmin\Service\Session\Dao\Registry');
+        $registryDao = $this->getMock('EMRAdmin\Service\Session\Dao\Registry');
         
         $registryDao->expects($this->once())->method('getAll')->will($this->returnValue(array($model)));
         
@@ -313,7 +313,7 @@ class RegistryKeepAliveTest extends PHPUnit_Framework_TestCase
             'session_timeout' => '2 hours'
         ));
         
-        $sessionRegistry = $this->createMock('EMRCore\Session\Memcache\Adapter');
+        $sessionRegistry = $this->getMock('EMRCore\Session\Memcache\Adapter');
         
         $sessionRegistry->expects($this->any())->method('get')->with('LastUpdatedTimestamp')
                 ->will($this->returnValue(strtotime('-3 hours')));
@@ -340,7 +340,7 @@ class RegistryKeepAliveTest extends PHPUnit_Framework_TestCase
      */
     public function testKeepAliveWithRegistryLessThanFiveMinutes()
     {
-        $mockedServiceLocator = $this->createMock('Zend\ServiceManager\ServiceLocatorInterface');
+        $mockedServiceLocator = $this->getMock('Zend\ServiceManager\ServiceLocatorInterface');
         
         $mockedServiceLocator->expects($this->any())->method('get')->will($this->returnCallback(function($name)
                 {
@@ -357,14 +357,14 @@ class RegistryKeepAliveTest extends PHPUnit_Framework_TestCase
                 }
                 ));
         
-        $model = $this->createMock('EMRAdmin\Model\SessionRegistry');
+        $model = $this->getMock('EMRAdmin\Model\SessionRegistry');
         
         $model->setIdentityId(1);
         $model->setSessionId(1);
         $model->setSessionRegistryId(1);
         $model->setSsoToken(1);
         
-        $registryDao = $this->createMock('EMRAdmin\Service\Session\Dao\Registry');
+        $registryDao = $this->getMock('EMRAdmin\Service\Session\Dao\Registry');
         
         $registryDao->expects($this->once())->method('getAll')->will($this->returnValue(array($model)));
         
@@ -384,7 +384,7 @@ class RegistryKeepAliveTest extends PHPUnit_Framework_TestCase
             'session_timeout' => '2 hours'
         ));
         
-        $sessionRegistry = $this->createMock('EMRCore\Session\Memcache\Adapter');
+        $sessionRegistry = $this->getMock('EMRCore\Session\Memcache\Adapter');
         
         $sessionRegistry->expects($this->any())->method('get')->with('LastUpdatedTimestamp')
                 ->will($this->returnValue(strtotime('-2 minutes')));
@@ -410,7 +410,7 @@ class RegistryKeepAliveTest extends PHPUnit_Framework_TestCase
      */
     public function testKeepAliveWithRegistryMoreThanFiveMinutes()
     {
-        $mockedServiceLocator = $this->createMock('Zend\ServiceManager\ServiceLocatorInterface');
+        $mockedServiceLocator = $this->getMock('Zend\ServiceManager\ServiceLocatorInterface');
         
         $mockedServiceLocator->expects($this->any())->method('get')->will($this->returnCallback(function($name)
                 {
@@ -427,14 +427,14 @@ class RegistryKeepAliveTest extends PHPUnit_Framework_TestCase
                 }
                 ));
         
-        $model = $this->createMock('EMRAdmin\Model\SessionRegistry');
+        $model = $this->getMock('EMRAdmin\Model\SessionRegistry');
         
         $model->setIdentityId(1);
         $model->setSessionId(1);
         $model->setSessionRegistryId(1);
         $model->setSsoToken(1);
         
-        $registryDao = $this->createMock('EMRAdmin\Service\Session\Dao\Registry');
+        $registryDao = $this->getMock('EMRAdmin\Service\Session\Dao\Registry');
         
         $registryDao->expects($this->once())->method('getAll')->will($this->returnValue(array($model)));
         
@@ -453,7 +453,7 @@ class RegistryKeepAliveTest extends PHPUnit_Framework_TestCase
             'session_timeout' => '2 hours'
         ));
         
-        $sessionRegistry = $this->createMock('EMRCore\Session\Memcache\Adapter');
+        $sessionRegistry = $this->getMock('EMRCore\Session\Memcache\Adapter');
         
         $sessionRegistry->expects($this->any())->method('get')->with('LastUpdatedTimestamp')
                 ->will($this->returnValue(strtotime('-6 minutes')));
